@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>IP鐭╅樀杩愯惀椹鹃┒鑸?/title>
+<title>IP矩阵运营驾驶舱</title>
 <style>
 :root{
   --bg:#f3f6fb;--panel:#fff;--line:#e4eaf2;--text:#172235;--muted:#7d899a;
@@ -26,8 +26,8 @@ border-bottom:1px solid var(--line);padding:14px 22px;display:flex;align-items:c
 .control{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-size:10px;color:#56657a}
 .platform-pills{display:flex;background:#eff3f7;padding:3px;border-radius:11px}
 .platform-pill{border:0;background:transparent;padding:7px 10px;border-radius:8px;font-size:10px;font-weight:800}
-.platform-pill[data-platform="鎶栭煶"]{color:#16818b}.platform-pill[data-platform="瑙嗛鍙?]{color:#3c62cd}.platform-pill[data-platform="灏忕孩涔?]{color:#c94f5f}.platform-pill[data-platform="鍏ㄩ儴骞冲彴"]{color:#415874}
-.platform-pill.active[data-platform="鎶栭煶"]{background:rgba(34,183,199,.14)}.platform-pill.active[data-platform="瑙嗛鍙?]{background:rgba(79,126,247,.14)}.platform-pill.active[data-platform="灏忕孩涔?]{background:rgba(233,104,118,.14)}.platform-pill.active[data-platform="鍏ㄩ儴骞冲彴"]{background:#fff}
+.platform-pill[data-platform="抖音"]{color:#16818b}.platform-pill[data-platform="视频号"]{color:#3c62cd}.platform-pill[data-platform="小红书"]{color:#c94f5f}.platform-pill[data-platform="全部平台"]{color:#415874}
+.platform-pill.active[data-platform="抖音"]{background:rgba(34,183,199,.14)}.platform-pill.active[data-platform="视频号"]{background:rgba(79,126,247,.14)}.platform-pill.active[data-platform="小红书"]{background:rgba(233,104,118,.14)}.platform-pill.active[data-platform="全部平台"]{background:#fff}
 
 .channel-nav{position:sticky;top:67px;z-index:35;background:rgba(243,246,251,.93);backdrop-filter:blur(10px);padding:12px 22px 8px}
 .channel-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1180px;margin:auto}
@@ -74,7 +74,7 @@ border-bottom:1px solid var(--line);padding:14px 22px;display:flex;align-items:c
 .need-row{margin:10px 0}.need-head{display:flex;justify-content:space-between;font-size:9px}.need-track{height:8px;background:#edf1f6;border-radius:999px;overflow:hidden;margin:5px 0}.need-track i{display:block;height:100%;border-radius:999px}.need-row p{font-size:8px;color:#7a8798;line-height:1.5;margin:0}
 .question-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.question{border:1px solid var(--line);border-radius:11px;padding:10px;background:#fff}.question p{font-size:9px;color:#5d6b80;line-height:1.6;margin:6px 0 0}
 
-.product-funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.funnel-step{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;position:relative}.funnel-step:not(:last-child):after{content:"鈫?;position:absolute;right:-9px;top:38%;color:#aab4c0;font-weight:900}.funnel-step span{font-size:8px;color:var(--muted)}.funnel-step b{display:block;font-size:21px;margin:8px 0}.funnel-step small{font-size:8px;color:#8a96a6}
+.product-funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.funnel-step{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;position:relative}.funnel-step:not(:last-child):after{content:"→";position:absolute;right:-9px;top:38%;color:#aab4c0;font-weight:900}.funnel-step span{font-size:8px;color:var(--muted)}.funnel-step b{display:block;font-size:21px;margin:8px 0}.funnel-step small{font-size:8px;color:#8a96a6}
 
 .tooltip{position:fixed;pointer-events:none;z-index:100;background:#172235;color:#fff;padding:8px 10px;border-radius:8px;font-size:8px;opacity:0;transform:translate(-50%,-110%)}
 @media(max-width:1200px){.channel-layout{grid-template-columns:1fr}.strategy-col{position:static}.strategy-body{max-height:none}.kpi-grid,.ring-grid{grid-template-columns:repeat(2,1fr)}}
@@ -222,10 +222,10 @@ body{
   background:#fff;
   box-shadow:0 4px 14px rgba(37,55,88,.08);
 }
-.platform-pill[data-platform="鎶栭煶"].active{color:#118999;background:var(--teal-soft)}
-.platform-pill[data-platform="瑙嗛鍙?].active{color:#335fd2;background:var(--blue-soft)}
-.platform-pill[data-platform="灏忕孩涔?].active{color:#c75061;background:var(--rose-soft)}
-.platform-pill[data-platform="鍏ㄩ儴骞冲彴"].active{color:#23334b}
+.platform-pill[data-platform="抖音"].active{color:#118999;background:var(--teal-soft)}
+.platform-pill[data-platform="视频号"].active{color:#335fd2;background:var(--blue-soft)}
+.platform-pill[data-platform="小红书"].active{color:#c75061;background:var(--rose-soft)}
+.platform-pill[data-platform="全部平台"].active{color:#23334b}
 
 .channel-nav{
   top:81px;
@@ -446,25 +446,34 @@ body{
 }
 .ring-info span{
   display:block;
-…22798 tokens truncated…暱鍛ㄦ湡 ${Number.isFinite(d)?pct(d):"鈥?}</small></div><div class="card kpi"><span>鍗曟潯鍧囨挱</span><b>${compact(avg)}</b><small>褰撳墠绛涢€夊懆鏈?/small></div><div class="card kpi"><span>鍐呭褰掑洜娑ㄧ矇</span><b>${fmt(followers)}</b><small>褰撳墠绛涢€夊懆鏈?路 闈炶处鍙峰噣澧?/small></div>`;
+  font-size:12px;
+  color:var(--muted);
+  font-weight:…19540 tokens truncated…de==="ratio")return b.ratio-a.ratio;if(mode==="viewer")return b.viewers-a.viewers;if(mode==="peak")return b.peak-a.peak;return b.conv-a.conv});const top=data.slice(0,5),mx=Math.max(...top.map(x=>mode==="play"?x.views:mode==="followers"?x.followers:mode==="ratio"?x.ratio:mode==="viewer"?x.viewers:mode==="peak"?x.peak:x.conv),1);return top.map((x,i)=>{const raw=mode==="play"?x.views:mode==="followers"?x.followers:mode==="ratio"?x.ratio:mode==="viewer"?x.viewers:mode==="peak"?x.peak:x.conv;const val=mode==="play"?compact(x.views):mode==="followers"?fmt(x.followers):mode==="ratio"?(x.ratio*10000).toFixed(1)+" /万播放":mode==="viewer"?compact(x.viewers):mode==="peak"?fmt(x.peak):pct(x.conv);return `<div class="rank-item"><div class="rank-no">${i+1}</div><div class="rank-title"><span class="ellipsis">${x.title}</span><span class="ptag" style="background:${COLORS[x.platform]};margin-top:4px">${x.platform}</span><div class="rank-bar"><i style="width:${Math.max(4,raw/mx*100)}%;background:${COLORS[x.platform]}"></i></div></div><div class="rank-value">${val}</div></div>`}).join("")}
 
-  const g=opsGrowth(state.platform,"8鏈?),pc=Number.isFinite(g.completion)?Math.min(100,g.completion*100):0;
-  shortGrowthPct.textContent=Number.isFinite(g.completion)?pct(g.completion):"鈥?;
+function renderShort(){
+  const rows=shortRows(),globalR=currentGlobalRange(),prevR=previousEqualRange(globalR);
+  const pr=SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,prevR));
+  const views=sum(rows,"views"),prevViews=sum(pr,"views"),followers=sum(rows,"followers"),avg=rows.length?views/rows.length:0;
+  const d=delta(views,prevViews);
+  shortKpis.innerHTML=`<div class="card kpi"><span>有效内容</span><b>${rows.length}</b><small>${globalR.label}</small></div><div class="card kpi"><span>播放量</span><b>${compact(views)}</b><small>较前一等长周期 ${Number.isFinite(d)?pct(d):"—"}</small></div><div class="card kpi"><span>单条均播</span><b>${compact(avg)}</b><small>当前筛选周期</small></div><div class="card kpi"><span>内容归因涨粉</span><b>${fmt(followers)}</b><small>当前筛选周期 · 非账号净增</small></div>`;
+
+  const g=opsGrowth(state.platform,"8月"),pc=Number.isFinite(g.completion)?Math.min(100,g.completion*100):0;
+  shortGrowthPct.textContent=Number.isFinite(g.completion)?pct(g.completion):"—";
   shortGrowthRing.style.setProperty("--p",pc);
-  shortGrowthRing.style.setProperty("--c",state.platform==="鎶栭煶"?COLORS["鎶栭煶"]:state.platform==="瑙嗛鍙??COLORS["瑙嗛鍙?]:state.platform==="灏忕孩涔??COLORS["灏忕孩涔?]:"#4f7ef7");
-  const ps=state.platform==="鍏ㄩ儴骞冲彴"?["鎶栭煶","瑙嗛鍙?,"灏忕孩涔?]:[state.platform];
-  shortPlatformRings.innerHTML=ps.map(p=>{const x=opsGrowth(p,"8鏈?),v=Number.isFinite(x.completion)?Math.min(100,x.completion*100):0;return `<div class="platform-mini"><div class="mini" style="--p:${v};--c:${COLORS[p]}"><b>${Number.isFinite(x.completion)?pct(x.completion):"鈥?}</b></div><span>${p}</span></div>`}).join("");
+  shortGrowthRing.style.setProperty("--c",state.platform==="抖音"?COLORS["抖音"]:state.platform==="视频号"?COLORS["视频号"]:state.platform==="小红书"?COLORS["小红书"]:"#4f7ef7");
+  const ps=state.platform==="全部平台"?["抖音","视频号","小红书"]:[state.platform];
+  shortPlatformRings.innerHTML=ps.map(p=>{const x=opsGrowth(p,"8月"),v=Number.isFinite(x.completion)?Math.min(100,x.completion*100):0;return `<div class="platform-mini"><div class="mini" style="--p:${v};--c:${COLORS[p]}"><b>${Number.isFinite(x.completion)?pct(x.completion):"—"}</b></div><span>${p}</span></div>`}).join("");
 
-  if(state.platform==="鍏ㄩ儴骞冲彴"){
-    const src=GROWTH_DATA.months["8鏈?],platformTarget=Object.values(src.platforms).reduce((s,x)=>s+Number(x.target||0),0),sourceTarget=Number(src.total?.target||0);
+  if(state.platform==="全部平台"){
+    const src=GROWTH_DATA.months["8月"],platformTarget=Object.values(src.platforms).reduce((s,x)=>s+Number(x.target||0),0),sourceTarget=Number(src.total?.target||0);
     const abnormal=Math.abs(platformTarget-sourceTarget)>.5;
     growthAnomalyBadge.style.display=abnormal?"inline-block":"none";
     shortGrowthNote.innerHTML=abnormal
-      ?`8鏈堟埅鑷?/9锛氬噣澧?${fmt(g.growth)}銆?span class="anomaly-note">婧愯〃鎬昏鐩爣 ${fmt(sourceTarget)} 涓庡钩鍙扮洰鏍囧悎璁?${fmt(platformTarget)} 涓嶄竴鑷达紱涓荤幆浠嶆部鐢ㄦ簮琛ㄦ€昏鍙ｅ緞銆?/span>`
-      :`8鏈堟埅鑷?/9锛氬噣澧?${fmt(g.growth)} / 鐩爣 ${fmt(Math.round(g.target||0))}`;
+      ?`8月截至8/9：净增 ${fmt(g.growth)}。<span class="anomaly-note">源表总计目标 ${fmt(sourceTarget)} 与平台目标合计 ${fmt(platformTarget)} 不一致；主环仍沿用源表总计口径。</span>`
+      :`8月截至8/9：净增 ${fmt(g.growth)} / 目标 ${fmt(Math.round(g.target||0))}`;
   }else{
     growthAnomalyBadge.style.display="none";
-    shortGrowthNote.textContent=`8鏈堟埅鑷?/9锛氬噣澧?${fmt(g.growth)} / 鐩爣 ${fmt(Math.round(g.target||0))}`;
+    shortGrowthNote.textContent=`8月截至8/9：净增 ${fmt(g.growth)} / 目标 ${fmt(Math.round(g.target||0))}`;
   }
 
   renderShortTrend(shortTrendRows());
@@ -473,36 +482,36 @@ body{
   const currentWeek={start:new Date("2026-08-03T00:00:00"),end:new Date("2026-08-09T23:59:59")};
   const priorWeek={start:new Date("2026-07-27T00:00:00"),end:new Date("2026-08-02T23:59:59")};
   const wp=sum(SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,currentWeek)),"views"),pwp=sum(SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,priorWeek)),"views");
-  const wg=state.platform==="鍏ㄩ儴骞冲彴"?Object.values(latest.platforms).reduce((a,b)=>a+b,0):(latest.platforms[state.platform]||0);
-  const pwg=state.platform==="鍏ㄩ儴骞冲彴"?Object.values(previous.platforms).reduce((a,b)=>a+b,0):(previous.platforms[state.platform]||0);
+  const wg=state.platform==="全部平台"?Object.values(latest.platforms).reduce((a,b)=>a+b,0):(latest.platforms[state.platform]||0);
+  const pwg=state.platform==="全部平台"?Object.values(previous.platforms).reduce((a,b)=>a+b,0):(previous.platforms[state.platform]||0);
 
   const m=shortMonthSelect.value,monthR=monthRange(m),samePrev=samePeriodPrevMonthRange(m);
   const mRows=SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,monthR)),pmRows=SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,samePrev));
   const mv=sum(mRows,"views"),pmv=sum(pmRows,"views"),mg=opsGrowth(state.platform,monthLabel(m)).growth,partial=GROWTH_DATA.months[monthLabel(m)]?.partial;
 
   shortReviewRings.innerHTML=[
-    ringCard("鍛ㄦ挱鏀?,compact(wp),delta(wp,pwp),"8/3鈥?/9 vs 7/27鈥?/2"),
-    ringCard("鍛ㄦ定绮夛紙鏈€鏂板彲鐢級",fmt(wg),delta(wg,pwg),latest.label+" 路 璐﹀彿鍑€澧?),
-    ringCard("鏈堟挱鏀?,compact(mv),delta(mv,pmv),m==="2026-08"?"8/1鈥?/9 vs 7/1鈥?/9":monthLabel(m)+" vs 涓婃湀"),
-    ringCard("鏈堟定绮?,fmt(mg),partial?NaN:delta(mg,opsGrowth(state.platform,monthLabel(prevMonth(m))).growth),partial?monthLabel(m)+"鎴嚦8/9 路 缂哄悓鏈熻处鍙峰噣澧?:"鑷劧鏈堢幆姣?)
+    ringCard("周播放",compact(wp),delta(wp,pwp),"8/3—8/9 vs 7/27—8/2"),
+    ringCard("周涨粉（最新可用）",fmt(wg),delta(wg,pwg),latest.label+" · 账号净增"),
+    ringCard("月播放",compact(mv),delta(mv,pmv),m==="2026-08"?"8/1—8/9 vs 7/1—7/9":monthLabel(m)+" vs 上月"),
+    ringCard("月涨粉",fmt(mg),partial?NaN:delta(mg,opsGrowth(state.platform,monthLabel(prevMonth(m))).growth),partial?monthLabel(m)+"截至8/9 · 缺同期账号净增":"自然月环比")
   ].join("");
 
   shortPlayRank.innerHTML=rankHtml(rows,"play");
   shortFollowerRank.innerHTML=rankHtml(rows,"followers");
   shortRatioRank.innerHTML=rankHtml(rows,"ratio");
   const top=[...rows].sort((a,b)=>b.views-a.views)[0];
-  shortAutoSignals.innerHTML=`<div class="signal"><strong>褰撳墠鍛ㄦ湡锛?/strong>${globalR.label}锛屾挱鏀?${compact(views)}锛?{Number.isFinite(d)?`杈冨墠涓€绛夐暱鍛ㄦ湡${d>=0?"澧為暱":"涓嬮檷"} ${Math.abs(d*100).toFixed(1)}%`:"鏆傛棤鍙瘮鏁版嵁"}銆?/div>${top?`<div class="signal"><strong>鏈€楂樻挱鏀撅細</strong>${top.platform}銆?{top.title}銆?${compact(top.views)}</div>`:""}<div class="signal"><strong>鍙ｅ緞鎻愰啋锛?/strong>8鏈堟湀鎾斁閲囩敤8/1鈥?/9瀵?/1鈥?/9鍚屾湡姣旇緝锛涘懆娑ㄧ矇浠嶅彧鑳藉睍绀?/20鈥?/26鐨勬渶鏂板彲鐢ㄨ处鍙峰噣澧炪€?/div>`;
+  shortAutoSignals.innerHTML=`<div class="signal"><strong>当前周期：</strong>${globalR.label}，播放 ${compact(views)}，${Number.isFinite(d)?`较前一等长周期${d>=0?"增长":"下降"} ${Math.abs(d*100).toFixed(1)}%`:"暂无可比数据"}。</div>${top?`<div class="signal"><strong>最高播放：</strong>${top.platform}《${top.title}》 ${compact(top.views)}</div>`:""}<div class="signal"><strong>口径提醒：</strong>8月月播放采用8/1—8/9对7/1—7/9同期比较；周涨粉仍只能展示7/20—7/26的最新可用账号净增。</div>`;
 }
 function renderShortTrend(rows){
   const svg=shortTrend;svg.innerHTML="";
   if(!rows.length){
-    svg.innerHTML='<text x="380" y="150" text-anchor="middle" fill="#8290a3" font-size="11">褰撳墠瓒嬪娍鏈堜唤鏆傛棤鐭棰戞暟鎹?/text>';
+    svg.innerHTML='<text x="380" y="150" text-anchor="middle" fill="#8290a3" font-size="11">当前趋势月份暂无短视频数据</text>';
     shortLegend.innerHTML="";
     return;
   }
   const W=760,H=300,p={l:45,r:24,t:20,b:45};
   const dates=[...new Set(rows.map(x=>x.date.slice(5,10)))].sort();
-  const platforms=state.platform==="鍏ㄩ儴骞冲彴"?["鎶栭煶","瑙嗛鍙?,"灏忕孩涔?]:[state.platform];
+  const platforms=state.platform==="全部平台"?["抖音","视频号","小红书"]:[state.platform];
   const max=Math.max(1,...platforms.flatMap(pl=>dates.map(d=>sum(rows.filter(x=>x.platform===pl&&x.date.slice(5,10)===d),"views"))))*1.1;
   const x=i=>dates.length===1?(p.l+W-p.r)/2:p.l+i*(W-p.l-p.r)/(dates.length-1);
   const y=v=>H-p.b-v/max*(H-p.t-p.b);
@@ -529,7 +538,7 @@ function renderShortTrend(rows){
     }
     pts.forEach(o=>{
       const c=svgEl("circle",{cx:o.x,cy:o.y,r:4,fill:"#fff",stroke:COLORS[pl],"stroke-width":"2"});
-      c.addEventListener("mousemove",e=>showTip(e,`${pl} 路 ${o.d}<br>${fmt(o.v)} 鎾斁`));
+      c.addEventListener("mousemove",e=>showTip(e,`${pl} · ${o.d}<br>${fmt(o.v)} 播放`));
       c.addEventListener("mouseleave",hideTip);
       svg.append(c);
     });
@@ -541,14 +550,14 @@ function renderShortTrend(rows){
     svg.append(t);
   });
 
-  shortLegend.innerHTML=platforms.map(p=>`<span><i style="background:${COLORS[p]}"></i>${p}鎾斁</span>`).join("");
+  shortLegend.innerHTML=platforms.map(p=>`<span><i style="background:${COLORS[p]}"></i>${p}播放</span>`).join("");
 }
 
 function renderLive(){
   const rows=liveRows(),globalR=currentGlobalRange(),prevR=previousEqualRange(globalR);
   const prGlobal=LIVE_DATA.filter(x=>!x.isTest&&pMatch(x)&&inRange(x,prevR));
   const viewers=sum(rows,"viewers"),gmv=sum(rows,"gmv"),followers=sum(rows,"newFollowers");
-  liveKpis.innerHTML=`<div class="card kpi"><span>鏈夋晥鐩存挱</span><b>${rows.length}</b><small>${globalR.label}</small></div><div class="card kpi"><span>鍦鸿</span><b>${compact(viewers)}</b><small>杈冨墠涓€绛夐暱鍛ㄦ湡 ${sum(prGlobal,"viewers")?pct(delta(viewers,sum(prGlobal,"viewers"))):"鈥?}</small></div><div class="card kpi"><span>鏂板鍏虫敞</span><b>${fmt(followers)}</b><small>褰撳墠绛涢€夊懆鏈?路 鐩存挱褰掑洜</small></div><div class="card kpi"><span>GMV</span><b>楼${fmt(gmv)}</b><small>${rows.reduce((s,x)=>s+x.orders,0)} 鍗?路 褰撳墠绛涢€夊懆鏈?/small></div>`;
+  liveKpis.innerHTML=`<div class="card kpi"><span>有效直播</span><b>${rows.length}</b><small>${globalR.label}</small></div><div class="card kpi"><span>场观</span><b>${compact(viewers)}</b><small>较前一等长周期 ${sum(prGlobal,"viewers")?pct(delta(viewers,sum(prGlobal,"viewers"))):"—"}</small></div><div class="card kpi"><span>新增关注</span><b>${fmt(followers)}</b><small>当前筛选周期 · 直播归因</small></div><div class="card kpi"><span>GMV</span><b>¥${fmt(gmv)}</b><small>${rows.reduce((s,x)=>s+x.orders,0)} 单 · 当前筛选周期</small></div>`;
 
   const trendRows=liveMonthRows();
   renderLiveTrend(trendRows);
@@ -557,22 +566,22 @@ function renderLive(){
   const m=liveMonthSelect.value,pm=m==="all"?null:prevMonth(m),pr=pm?LIVE_DATA.filter(x=>!x.isTest&&pMatch(x)&&inRange(x,monthRange(pm))):[];
   const monthViewers=sum(trendRows,"viewers"),currPeak=trendRows.length?Math.max(...trendRows.map(x=>x.peak||0)):0,prevPeak=pr.length?Math.max(...pr.map(x=>x.peak||0)):0,currConv=monthViewers?sum(trendRows,"buyers")/monthViewers:NaN,prevConv=sum(pr,"viewers")?sum(pr,"buyers")/sum(pr,"viewers"):NaN,monthAvg=monthViewers?trendRows.reduce((s,x)=>s+x.avgWatch*x.viewers,0)/monthViewers:0;
   liveReviewRings.innerHTML=[
-    ringCard("鏈堝満瑙?,compact(monthViewers),pm?delta(monthViewers,sum(pr,"viewers")):NaN,m==="all"?"鍏ㄩ儴":monthLabel(m)),
-    ringCard("鏈€楂樺湪绾?,fmt(currPeak),prevPeak?delta(currPeak,prevPeak):NaN,"PCU"),
-    ringCard("鎴愪氦杞寲",Number.isFinite(currConv)?pct(currConv):"鈥?,Number.isFinite(prevConv)&&prevConv?delta(currConv,prevConv):NaN,"鎴愪氦浜烘暟 梅 鍦鸿"),
-    ringCard("骞冲潎鍋滅暀",Math.round(monthAvg/60)+"鍒嗛挓",NaN,"瓒嬪娍鏈堜唤")
+    ringCard("月场观",compact(monthViewers),pm?delta(monthViewers,sum(pr,"viewers")):NaN,m==="all"?"全部":monthLabel(m)),
+    ringCard("最高在线",fmt(currPeak),prevPeak?delta(currPeak,prevPeak):NaN,"PCU"),
+    ringCard("成交转化",Number.isFinite(currConv)?pct(currConv):"—",Number.isFinite(prevConv)&&prevConv?delta(currConv,prevConv):NaN,"成交人数 ÷ 场观"),
+    ringCard("平均停留",Math.round(monthAvg/60)+"分钟",NaN,"趋势月份")
   ].join("");
 
   liveViewerRank.innerHTML=rankHtml(rows,"viewer");
   livePeakRank.innerHTML=rankHtml(rows,"peak");
   liveConversionRank.innerHTML=rankHtml(rows,"conv");
   const best=[...rows].sort((a,b)=>b.viewers-a.viewers)[0];
-  liveAutoSignals.innerHTML=`<div class="signal"><strong>褰撳墠鍛ㄦ湡锛?/strong>${globalR.label}锛屾湁鏁堢洿鎾?${rows.length} 鍦猴紝鍦鸿 ${compact(viewers)}銆?/div>${best?`<div class="signal"><strong>鏈€楂樺満瑙傦細</strong>${best.platform}銆?{best.title}銆?${compact(best.viewers)}</div>`:""}<div class="signal"><strong>鍙ｅ緞鎻愰啋锛?/strong>PCU 涓庡钩鍧囧仠鐣欏凡鎷嗗浘锛涘钩鍙扮瓫閫夊湪鐩存挱鏍忕鐢ㄥ皬绾功銆?/div>`;
+  liveAutoSignals.innerHTML=`<div class="signal"><strong>当前周期：</strong>${globalR.label}，有效直播 ${rows.length} 场，场观 ${compact(viewers)}。</div>${best?`<div class="signal"><strong>最高场观：</strong>${best.platform}《${best.title}》 ${compact(best.viewers)}</div>`:""}<div class="signal"><strong>口径提醒：</strong>PCU 与平均停留已拆图；平台筛选在直播栏禁用小红书。</div>`;
 }
 function renderLiveTrend(rows){
   const svg=liveTrend;svg.innerHTML="";
   if(!rows.length){
-    svg.innerHTML='<text x="380" y="125" text-anchor="middle" fill="#8290a3" font-size="11">褰撳墠瓒嬪娍鏈堜唤鏆傛棤鐩存挱婧愭暟鎹?/text>';
+    svg.innerHTML='<text x="380" y="125" text-anchor="middle" fill="#8290a3" font-size="11">当前趋势月份暂无直播源数据</text>';
     return;
   }
   const W=760,H=260,p={l:45,r:20,t:20,b:40},
@@ -585,7 +594,7 @@ function renderLiveTrend(rows){
     svg.append(svgEl("line",{x1:p.l,y1:gy,x2:W-p.r,y2:gy,stroke:"#e9eef5"}));
   }
 
-  ["瑙嗛鍙?,"鎶栭煶"].forEach(pl=>{
+  ["视频号","抖音"].forEach(pl=>{
     const pts=rows.map((r,i)=>r.platform===pl?{r,x:x(i),y:y(r.peak)}:null).filter(Boolean);
     if(pts.length>1){
       svg.append(svgEl("path",{
@@ -599,7 +608,7 @@ function renderLiveTrend(rows){
     }
     pts.forEach(o=>{
       const c=svgEl("circle",{cx:o.x,cy:o.y,r:4,fill:COLORS[pl],stroke:"#fff","stroke-width":"2"});
-      c.addEventListener("mousemove",e=>showTip(e,`${o.r.platform}<br>${o.r.date.slice(5,10)} 路 PCU ${fmt(o.r.peak)}`));
+      c.addEventListener("mousemove",e=>showTip(e,`${o.r.platform}<br>${o.r.date.slice(5,10)} · PCU ${fmt(o.r.peak)}`));
       c.addEventListener("mouseleave",hideTip);
       svg.append(c);
     });
@@ -615,7 +624,7 @@ function renderLiveTrend(rows){
 function renderLiveWatchTrend(rows){
   const svg=liveWatchTrend;svg.innerHTML="";
   if(!rows.length){
-    svg.innerHTML='<text x="380" y="125" text-anchor="middle" fill="#8290a3" font-size="11">褰撳墠瓒嬪娍鏈堜唤鏆傛棤鍋滅暀鏁版嵁</text>';
+    svg.innerHTML='<text x="380" y="125" text-anchor="middle" fill="#8290a3" font-size="11">当前趋势月份暂无停留数据</text>';
     return;
   }
   const W=760,H=260,p={l:45,r:20,t:20,b:40},
@@ -642,7 +651,7 @@ function renderLiveWatchTrend(rows){
   }
   pts.forEach(o=>{
     const c=svgEl("circle",{cx:o.x,cy:o.y,r:4,fill:"#7b6fe0",stroke:"#fff","stroke-width":"2"});
-    c.addEventListener("mousemove",e=>showTip(e,`${o.r.date.slice(5,10)}<br>骞冲潎鍋滅暀 ${o.v.toFixed(1)} 鍒嗛挓`));
+    c.addEventListener("mousemove",e=>showTip(e,`${o.r.date.slice(5,10)}<br>平均停留 ${o.v.toFixed(1)} 分钟`));
     c.addEventListener("mouseleave",hideTip);
     svg.append(c);
   });
@@ -661,25 +670,45 @@ function aiReview(kind){
   const out=document.getElementById(kind+"Output");
   const v=id=>(document.getElementById(id)?.value||"").trim();
   if(kind==="short"){
-    out.textContent=`銆愬熀浜?.10杩愯惀琛ㄧ殑鐭棰戠瓥鐣ャ€?1. 鎺у埗鏇存柊棰戞鏄綋鍓嶆槑纭瓥鐣ワ紝涓嶅啀浠ラ珮棰戞洿鏂颁负涓昏鐩爣锛涙湰鍛ㄤ粎鏇存柊2鏉′絾鍏ㄧ綉浠嶅噣澧?,694锛岄暱灏炬晥搴斿€煎緱缁х画瑙傚療銆?2. 鍐呭缁х画浠庢硾瀹跺涵鏁欒偛鏀剁缉鍒扳€滀汉鍙ｈ秼鍔?+ 澶у鍐崇瓥鈥濄€傝繃鍘昏〃鐜版洿濂界殑姣嶉闆嗕腑鍦ˋI鍐插嚮鏁欒偛銆佸鍘嗚船鍊笺€佸氨涓氬帇鍔涚瓑楂樹笉纭畾鎬ц棰樸€?3. 涓嬩竴姝ヤ笉鏄畝鍗曞鍔犲彂甯冮噺锛岃€屾槸鎶婅繖浜涢珮鍔胯兘姣嶉鎵撶（鎴愬彲澶嶅埗鍐呭妯″瀷銆?
-銆愭湰娆¤ˉ鍏呭鐩樸€?鏈夋晥鍔ㄤ綔锛?{v("shortGood")||"鈥?}
-闂锛?{v("shortBad")||"鈥?}
-涓嬪懆锛?{v("shortNext")||"鈥?}`;
+    out.textContent=`【基于8.10运营表的短视频策略】
+1. 控制更新频次是当前明确策略，不再以高频更新为主要目标；本周仅更新2条但全网仍净增1,694，长尾效应值得继续观察。
+2. 内容继续从泛家庭教育收缩到“人口趋势 + 大学决策”。过去表现更好的母题集中在AI冲击教育、学历贬值、就业压力等高不确定性议题。
+3. 下一步不是简单增加发布量，而是把这些高势能母题打磨成可复制内容模型。
+
+【本次补充复盘】
+有效动作：${v("shortGood")||"—"}
+问题：${v("shortBad")||"—"}
+下周：${v("shortNext")||"—"}`;
   }else if(kind==="live"){
-    out.textContent=`銆愬熀浜?.10杩愯惀琛ㄧ殑鐩存挱绛栫暐銆?1. 杩炵画涓婚鐩存挱浼樹簬鍗曞満鐩存挱锛涘紑鏀惧紡绛旂枒瀹规槗澶卞幓涓荤嚎锛屽悗缁户缁噰鐢ㄢ€滀富棰樺瀷绛旂枒鈥濄€?2. 鏈懆3澶╀氦浠樼洿鎾敹闆?缁勫幓閲嶉棶棰橈紝鐩存挱搴斿悓鏃舵壙鎷呬氦浠樸€佷俊浠诲拰鐢ㄦ埛闇€姹傜爺绌躲€?3. 鑻ョ洿鎾壙鎷呭彂鍞紝鍏抽敭鍓嶇疆鏉′欢鏄槑纭箶鑰佸笀鏄惁鍙備笌閿€鍞紝浠ュ強鍙備笌杈圭晫锛涗骇鍝佷氦浠樿妭濂忎紭鍏堟暡瀹氣€滄瘡鏈?鍦洪棴闂ㄧ洿鎾€濄€?
-銆愭湰娆¤ˉ鍏呭鐩樸€?鍦鸿/鍦ㄧ嚎锛?{v("liveTraffic")||"鈥?}
-鍐呭/鍋滅暀锛?{v("liveContent")||"鈥?}
-涓嬪懆鍔ㄤ綔锛?{v("liveNext")||"鈥?}`;
+    out.textContent=`【基于8.10运营表的直播策略】
+1. 连续主题直播优于单场直播；开放式答疑容易失去主线，后续继续采用“主题型答疑”。
+2. 本周3天交付直播收集7组去重问题，直播应同时承担交付、信任和用户需求研究。
+3. 若直播承担发售，关键前置条件是明确乔老师是否参与销售，以及参与边界；产品交付节奏优先敲定“每月1场闭门直播”。
+
+【本次补充复盘】
+场观/在线：${v("liveTraffic")||"—"}
+内容/停留：${v("liveContent")||"—"}
+下周动作：${v("liveNext")||"—"}`;
   }else if(kind==="private"){
-    out.textContent=`銆愬熀浜?.10杩愯惀琛ㄧ殑绉佸煙绛栫暐銆?1. 褰撳墠鏈€娓呮櫚鐨勯渶姹備笉鏄硾瀹跺涵鏁欒偛锛岃€屾槸涓夌被閲嶅ぇ鍐崇瓥锛氬ぇ瀛?涓撲笟/鍩庡競閫夋嫨銆佸ぇ瀛﹀嵄鏈轰笌璺緞閲嶈建銆佹暀鑲叉姇璧勬€т环姣斾笌闀挎湡鑳藉姏銆?2. 鐢ㄦ埛搴曞眰璇夋眰浠嶆槸鈥滅湅娓呮湭鏉ャ€佸噺灏戜笉纭畾鎬р€濄€?3. 绉佸煙涓嬩竴姝ヨ楠岃瘉楂樹腑/澶у闃舵瀹堕暱鏄惁涓轰粯璐逛富鍔涳紝骞跺洿缁曢噸澶ч€夋嫨鑺傜偣鍋氬垎灞備笌娣辫銆?
-銆愭湰娆¤ˉ鍏呭鐩樸€?鐢ㄦ埛闇€姹傦細${v("privateNeeds")||"鈥?}
-杩愯惀鍔ㄤ綔锛?{v("privateOps")||"鈥?}
-涓嬪懆楠岃瘉锛?{v("privateNext")||"鈥?}`;
+    out.textContent=`【基于8.10运营表的私域策略】
+1. 当前最清晰的需求不是泛家庭教育，而是三类重大决策：大学/专业/城市选择、大学危机与路径重轨、教育投资性价比与长期能力。
+2. 用户底层诉求仍是“看清未来、减少不确定性”。
+3. 私域下一步要验证高中/大学阶段家长是否为付费主力，并围绕重大选择节点做分层与深访。
+
+【本次补充复盘】
+用户需求：${v("privateNeeds")||"—"}
+运营动作：${v("privateOps")||"—"}
+下周验证：${v("privateNext")||"—"}`;
   }else{
-    out.textContent=`銆愬熀浜?.10杩愯惀琛ㄧ殑浜у搧绛栫暐銆?1. 浜у搧瀹氫綅缁х画浠庘€滆В鍐虫墍鏈夊搴暀鑲查棶棰樷€濇敹绐勪负鈥滃缓绔嬫暀鑲查暱鏈熷垽鏂鏋躲€佸簲瀵归噸澶ч€夋嫨鈥濄€?2. 褰撳墠鏈€鍏抽敭鍗＄偣鏄細涔旇€佸笀瀵瑰晢涓氬寲閿€鍞殑鍙備笌鎰忔効鍜岃竟鐣屽皻鏈‘璁わ紱姝ゅ墠浜у搧杩樺瓨鍦ㄨ€佸笀鎿呴暱鍐呭涓庨攢鍞瘽鏈敊浣嶃€佷骇鍝佷环鍊间笉鑱氱劍鐨勯棶棰樸€?3. 涓嬩竴姝ュ姩浣滃凡缁忔槑纭細娣卞害娌熼€氫骇鍝佹柟妗堬紝纭閿€鍞弬涓庯紝鏁插畾姣忔湀1鍦洪棴闂ㄧ洿鎾紱鍚屾瀹屾垚鍙戝敭鍑嗗涓庤浆鍖栬瘽鏈紝鍚姩棣栬疆杞寲娴嬭瘯銆?
-銆愭湰娆¤ˉ鍏呭鐩樸€?浜у搧鏈夋晥鐐癸細${v("productGood")||"鈥?}
-浜у搧闂锛?{v("productBad")||"鈥?}
-涓嬩竴姝ワ細${v("productNext")||"鈥?}`;
+    out.textContent=`【基于8.10运营表的产品策略】
+1. 产品定位继续从“解决所有家庭教育问题”收窄为“建立教育长期判断框架、应对重大选择”。
+2. 当前最关键卡点是：乔老师对商业化销售的参与意愿和边界尚未确认；此前产品还存在老师擅长内容与销售话术错位、产品价值不聚焦的问题。
+3. 下一步动作已经明确：深度沟通产品方案，确认销售参与，敲定每月1场闭门直播；同步完成发售准备与转化话术，启动首轮转化测试。
+
+【本次补充复盘】
+产品有效点：${v("productGood")||"—"}
+产品问题：${v("productBad")||"—"}
+下一步：${v("productNext")||"—"}`;
   }
 }
 function setPlatform(platform){
@@ -687,9 +716,9 @@ function setPlatform(platform){
   document.querySelectorAll(".platform-pill").forEach(x=>x.classList.toggle("active",x.dataset.platform===platform))
 }
 function syncPlatformUI(){
-  const xhsBtn=document.querySelector('.platform-pill[data-platform="灏忕孩涔?]');
+  const xhsBtn=document.querySelector('.platform-pill[data-platform="小红书"]');
   if(state.channel==="private"||state.channel==="product"||state.channel==="weekly")platformPills.style.display="none";else platformPills.style.display="flex";
-  if(state.channel==="live"){xhsBtn.disabled=true;if(state.platform==="灏忕孩涔?)setPlatform("鍏ㄩ儴骞冲彴")}else xhsBtn.disabled=false
+  if(state.channel==="live"){xhsBtn.disabled=true;if(state.platform==="小红书")setPlatform("全部平台")}else xhsBtn.disabled=false
 }
 document.querySelectorAll(".channel-tab").forEach(b=>b.addEventListener("click",()=>{
   state.channel=b.dataset.channel;
@@ -706,21 +735,21 @@ liveMonthSelect.addEventListener("change",renderLive);
 document.querySelectorAll("[data-save]").forEach(b=>b.addEventListener("click",()=>saveReview(b.dataset.save)));
 document.querySelectorAll("[data-ai]").forEach(b=>b.addEventListener("click",()=>aiReview(b.dataset.ai)));
 refreshData.addEventListener("click",async()=>{await loadDashboardData();rerenderDashboard()});
-openUpload.addEventListener("click",()=>{cloudModal.hidden=false;uploadResult.textContent="绛夊緟涓婁紶"});
+openUpload.addEventListener("click",()=>{cloudModal.hidden=false;uploadResult.textContent="等待上传"});
 closeUpload.addEventListener("click",()=>{cloudModal.hidden=true});
 cloudModal.addEventListener("click",e=>{if(e.target===cloudModal)cloudModal.hidden=true});
 downloadCurrentData.addEventListener("click",()=>downloadJson(currentDashboardPayload()));
 submitUpload.addEventListener("click",async()=>{
   try{
-    if(!dataFiles.files.length)throw new Error("璇烽€夋嫨鏁版嵁鏂囦欢");
-    uploadResult.textContent="姝ｅ湪瑙ｆ瀽鏂囦欢...";
+    if(!dataFiles.files.length)throw new Error("请选择数据文件");
+    uploadResult.textContent="正在解析文件...";
     const {payload,summary}=await parseDataFiles(dataFiles.files);
-    uploadResult.textContent="姝ｅ湪鍐欏叆浜戠...";
+    uploadResult.textContent="正在写入云端...";
     await uploadPayload(payload,adminPassword.value);
     applyDashboardPayload(payload);
     rerenderDashboard();
-    setCloudStatus("浜戠鏁版嵁 路 "+(META.asOf||"宸插悓姝?),"ok");
-    uploadResult.textContent="涓婁紶鎴愬姛銆俓n"+summary;
+    setCloudStatus("云端数据 · "+(META.asOf||"已同步"),"ok");
+    uploadResult.textContent="上传成功。\n"+summary;
   }catch(err){
     uploadResult.textContent=err.message||String(err);
   }
