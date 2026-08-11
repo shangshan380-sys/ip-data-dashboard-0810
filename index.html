@@ -454,7 +454,7 @@ body{
   display:block;
   font-size:18px;
   margin:6px 0;
-  font-weig
+  font-wei
 ht:900;
   color:var(--navy);
 }
@@ -1301,7 +1301,7 @@ body{letter-spacing:0}
 <div class="section-head"><div><h2>月涨粉完成进度</h2><p>账号净增口径，来自「乔老涨粉」sheet / 8月截至9日更新</p></div><span class="badge red" id="growthAnomalyBadge">源表总计目标待核</span></div>
 <div class="big-ring-layout">
 <div class="big-ring" id="shortGrowthRing"><div class="center"><b id="shortGrowthPct">—</b><span>总完成度</span></div></div>
-<div><div class="platform-mini-rings" id="shortPlatformRings"></div><div id="shortGrowthNote" style="font-size:8px;color:#839
+<div><div class="platform-mini-rings" id="shortPlatformRings"></div><div id="shortGrowthNote" style="font-size:8px;color:#83
 0a1;margin-top:10px"></div></div>
 </div>
 </div>
@@ -1608,7 +1608,7 @@ AI时代学历是否还重要；
   </div>
 </div>
 <div class="tooltip" id="tooltip"></div>
-<scrip
+<scri
 t>
 let SHORT_DATA=[];
 let LIVE_DATA=[];
@@ -2086,7 +2086,7 @@ function currentGlobalRange(){
   const now=new Date((META.asOf||"2026-08-09")+"T23:59:59");
   if(globalPeriod.value==="custom")return {start:new Date(globalStart.value+"T00:00:00"),end:new Date(globalEnd.value+"T23:59:59"),label:`${globalStart.value}—${globalEnd.value}`};
   if(globalPeriod.value==="thisWeek")return {start:new Date("2026-08-03T00:00:00"),end:now,label:"本周 8/3—8/9"};
-  if(globalPeriod.value==="lastWeek")return {start:new Date("2026-0
+  if(globalPeriod.value==="lastWeek")return {start:new Date("2026-
 7-27T00:00:00"),end:new Date("2026-08-02T23:59:59"),label:"上周 7/27—8/2"};
   return {start:new Date("2026-07-11T00:00:00"),end:now,label:"近30天 7/11—8/9"};
 }
@@ -2410,7 +2410,7 @@ submitUpload.addEventListener("click",async()=>{
   try{
     if(!dataFiles.files.length)throw new Error("请选择数据文件");
     uploadResult.textContent="正在解析文件...";
-    const {pa
+    const {p
 yload,summary}=await parseDataFiles(dataFiles.files);
     uploadResult.textContent="正在写入云端...";
     await uploadPayload(payload,adminPassword.value);
@@ -2425,4 +2425,4 @@ yload,summary}=await parseDataFiles(dataFiles.files);
 bootDashboard();
 </script>
 </body>
-</html>
+</html
