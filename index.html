@@ -448,7 +448,1674 @@ body{
   display:block;
   font-size:12px;
   color:var(--muted);
-  font-weight:…19540 tokens truncated…de==="ratio")return b.ratio-a.ratio;if(mode==="viewer")return b.viewers-a.viewers;if(mode==="peak")return b.peak-a.peak;return b.conv-a.conv});const top=data.slice(0,5),mx=Math.max(...top.map(x=>mode==="play"?x.views:mode==="followers"?x.followers:mode==="ratio"?x.ratio:mode==="viewer"?x.viewers:mode==="peak"?x.peak:x.conv),1);return top.map((x,i)=>{const raw=mode==="play"?x.views:mode==="followers"?x.followers:mode==="ratio"?x.ratio:mode==="viewer"?x.viewers:mode==="peak"?x.peak:x.conv;const val=mode==="play"?compact(x.views):mode==="followers"?fmt(x.followers):mode==="ratio"?(x.ratio*10000).toFixed(1)+" /万播放":mode==="viewer"?compact(x.viewers):mode==="peak"?fmt(x.peak):pct(x.conv);return `<div class="rank-item"><div class="rank-no">${i+1}</div><div class="rank-title"><span class="ellipsis">${x.title}</span><span class="ptag" style="background:${COLORS[x.platform]};margin-top:4px">${x.platform}</span><div class="rank-bar"><i style="width:${Math.max(4,raw/mx*100)}%;background:${COLORS[x.platform]}"></i></div></div><div class="rank-value">${val}</div></div>`}).join("")}
+  font-weight:700;
+}
+.ring-info strong{
+  display:block;
+  font-size:18px;
+  margin:6px 0;
+  font-weig
+ht:900;
+  color:var(--navy);
+}
+.ring-info small{
+  display:block;
+  font-size:12px;
+  line-height:1.5;
+  color:var(--muted-2);
+}
+
+.rank-list{gap:6px}
+.rank-item{
+  padding:12px 0;
+  gap:10px;
+}
+.rank-no{
+  width:28px;height:28px;
+  font-size:11px;
+  border-radius:9px;
+}
+.rank-item .rank-title,
+.rank-item .rank-value{
+  font-size:13px;
+}
+.rank-item .rank-title{
+  color:var(--text-2);
+  line-height:1.45;
+}
+.rank-item .rank-value{
+  font-weight:900;
+  color:var(--navy);
+}
+.ptag{
+  padding:4px 8px;
+  font-size:10px;
+  font-weight:900;
+}
+.topic{
+  padding:4px 8px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.table-wrap{
+  border-radius:16px;
+}
+.table{
+  font-size:13px;
+}
+.table th,.table td{
+  padding:12px 10px;
+}
+.table th{
+  font-size:12px;
+  color:#728399;
+}
+
+.need-row{margin:14px 0}
+.need-head{
+  font-size:13px;
+  font-weight:800;
+  color:var(--text-2);
+}
+.need-track{
+  height:10px;
+  margin:8px 0 7px;
+  border-radius:999px;
+}
+.need-row p{
+  font-size:12px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.question{
+  padding:14px;
+  border-radius:16px;
+  box-shadow:var(--shadow-soft);
+}
+.question p{
+  font-size:13px;
+  line-height:1.72;
+  color:var(--text-2);
+  margin-top:8px;
+}
+
+.funnel-step{
+  border-radius:16px;
+  padding:16px;
+  box-shadow:var(--shadow-soft);
+}
+.funnel-step span{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:700;
+}
+.funnel-step b{
+  display:block;
+  font-size:28px;
+  font-weight:900;
+  color:var(--navy);
+  margin:10px 0 8px;
+}
+.funnel-step small{
+  font-size:12px;
+  line-height:1.55;
+  color:var(--muted-2);
+}
+
+.strategy-panel{
+  border-radius:22px;
+}
+.strategy-head{
+  padding:18px 20px;
+}
+.strategy-head h2{
+  font-size:17px;
+  font-weight:900;
+  color:var(--navy);
+}
+.strategy-head p{
+  font-size:12px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-top:6px;
+}
+.strategy-body{
+  padding:16px;
+  max-height:calc(100vh - 205px);
+}
+.strategy-block{
+  padding:14px;
+  margin-bottom:12px;
+  border-radius:16px;
+  background:linear-gradient(180deg,#fcfdff 0%,#f8fbff 100%);
+}
+.strategy-block h3{
+  font-size:13px;
+  font-weight:900;
+  color:var(--navy);
+  margin-bottom:10px;
+}
+.strategy-block label{
+  font-size:12px;
+  color:var(--muted);
+}
+.strategy-block textarea{
+  min-height:88px;
+  padding:11px 12px;
+  font-size:13px;
+  line-height:1.65;
+  color:var(--text-2);
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.strategy-block .signal{
+  padding:11px 12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  background:#fff;
+  border:1px solid rgba(220,229,240,.9);
+  font-size:13px;
+  line-height:1.65;
+  color:var(--text-2);
+}
+.strategy-block .signal strong{
+  color:var(--navy);
+}
+.strategy-actions{
+  gap:10px;
+  padding-top:6px;
+}
+.strategy-actions button{
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:900;
+  box-shadow:var(--shadow-soft);
+}
+.strategy-actions .save{
+  background:linear-gradient(135deg,#4f7ef7,#6590fb);
+}
+.strategy-actions .ai{
+  background:linear-gradient(135deg,#7b6fe0,#9388ef);
+}
+.strategy-output{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  font-size:13px;
+  line-height:1.75;
+  color:var(--text-2);
+  background:#f8fbff;
+}
+
+.live-data-status{
+  border-radius:16px;
+  padding:14px 16px;
+  box-shadow:var(--shadow-soft);
+}
+.live-data-status b{
+  font-size:13px;
+}
+.live-data-status span{
+  font-size:12px;
+  line-height:1.55;
+}
+.live-status-platforms span{
+  font-size:12px;
+  padding:7px 10px 7px 20px;
+}
+
+.mini-chart-title{
+  font-size:13px;
+  font-weight:900;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.anomaly-note{
+  font-size:12px;
+  line-height:1.6;
+}
+
+.tooltip{
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:12px;
+  line-height:1.55;
+  box-shadow:0 12px 30px rgba(18,30,50,.22);
+}
+
+@media(max-width:1200px){
+  .kpi-grid,.ring-grid{grid-template-columns:repeat(2,1fr)}
+  .big-ring-layout{grid-template-columns:1fr}
+  .strategy-col{top:auto}
+}
+@media(max-width:820px){
+  html,body{font-size:13px}
+  .topbar{padding:14px 16px}
+  .brand h1{font-size:18px}
+  .brand p{font-size:11px}
+  .channel-tabs{grid-template-columns:1fr 1fr}
+  .main{padding:14px 14px 24px}
+  .card{padding:16px}
+  .section-head h2{font-size:16px}
+  .section-head p{font-size:12px}
+  .kpi-grid,.ring-grid,.private-grid,.product-funnel{grid-template-columns:1fr 1fr}
+  .three,.two,.question-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .kpi-grid,.ring-grid,.private-grid,.product-funnel{grid-template-columns:1fr}
+  .control{min-width:100px}
+  .strategy-actions{grid-template-columns:1fr}
+}
+
+/* ===========================================
+   v17 Executive / Consulting Dashboard
+   =========================================== */
+:root{
+  --bg:#f4f2ee;
+  --panel:#ffffff;
+  --panel-2:#faf9f7;
+  --line:#ddd9d1;
+  --line-2:#cbc5bb;
+  --text:#1f2933;
+  --text-2:#3b4652;
+  --muted:#6f7882;
+  --muted-2:#90969d;
+  --navy:#20364d;
+  --blue:#486c8e;
+  --blue-soft:#eef3f7;
+  --teal:#4f8a87;
+  --teal-soft:#edf5f4;
+  --rose:#b96970;
+  --rose-soft:#f8eeee;
+  --violet:#746b8f;
+  --violet-soft:#f2f0f6;
+  --orange:#b7834d;
+  --orange-soft:#f8f1e9;
+  --green:#4f8166;
+  --green-soft:#eef5f0;
+  --shadow:0 10px 28px rgba(39,45,52,.055);
+  --shadow-soft:0 6px 18px rgba(39,45,52,.04);
+}
+
+html,body{
+  color:var(--text);
+  background:
+    linear-gradient(180deg,#f7f5f1 0%,#f2f0ec 100%);
+}
+body{letter-spacing:0}
+
+.topbar{
+  background:rgba(250,249,247,.97);
+  border-bottom:1px solid #dcd7cf;
+  box-shadow:none;
+}
+.logo{
+  background:var(--navy);
+  box-shadow:none;
+  border-radius:8px;
+}
+.brand h1{
+  color:#203040;
+  font-size:20px;
+  letter-spacing:.1px;
+}
+.brand p{
+  color:#7a8087;
+  font-size:12px;
+}
+.control,.global-custom input{
+  background:#fff;
+  color:#46515c;
+  border:1px solid #d8d4cd;
+  box-shadow:none;
+  border-radius:8px;
+}
+.control:focus,.global-custom input:focus{
+  outline:none;
+  border-color:#8b9cad;
+  box-shadow:0 0 0 2px rgba(72,108,142,.08);
+}
+
+.platform-pills{
+  background:#ece9e4;
+  border:1px solid #dfdbd4;
+  box-shadow:none;
+  border-radius:9px;
+}
+.platform-pill{
+  border-radius:6px;
+  font-size:12px;
+  color:#747c85;
+}
+.platform-pill.active{
+  background:#fff;
+  box-shadow:0 1px 4px rgba(40,45,50,.05);
+}
+.platform-pill[data-platform="全部平台"].active{color:#243749}
+.platform-pill[data-platform="抖音"].active{color:#3e7774;background:#eef5f4}
+.platform-pill[data-platform="视频号"].active{color:#486c8e;background:#eef3f7}
+.platform-pill[data-platform="小红书"].active{color:#a85e66;background:#f8eeee}
+
+.channel-nav{
+  background:rgba(244,242,238,.96);
+  border-bottom:1px solid #e2ded7;
+}
+.channel-tabs{gap:8px}
+.channel-tab{
+  background:#fff;
+  border:1px solid #dfdbd4;
+  border-radius:10px;
+  color:#717984;
+  box-shadow:none;
+  padding:14px 16px;
+}
+.channel-tab.active{
+  transform:none;
+  color:#20364d;
+  background:#fff;
+  border-color:#9ca7b1;
+  box-shadow:0 2px 8px rgba(40,45,52,.05);
+}
+.channel-tab span{font-size:14px}
+.channel-tab small{font-size:11px;color:#979da4}
+.channel-tab i{width:8px;height:8px}
+
+.main{max-width:1560px}
+.channel-layout{gap:18px}
+
+.card{
+  background:#fff;
+  border:1px solid #ddd9d1;
+  border-radius:12px;
+  box-shadow:none;
+}
+.card:hover{border-color:#d2cdc5}
+.section:before{display:none}
+
+.section-head h2{
+  color:#25384b;
+  font-size:17px;
+  letter-spacing:0;
+}
+.section-head p{
+  color:#767f88;
+  font-size:12px;
+  max-width:980px;
+}
+.badge{
+  border-radius:6px;
+  border:1px solid transparent;
+  padding:6px 8px;
+  font-size:10px;
+}
+.badge.blue{background:#eef3f7;color:#486c8e;border-color:#d9e2e9}
+.badge.green{background:#eef5f0;color:#4f8166;border-color:#d8e6dc}
+.badge.orange{background:#f8f1e9;color:#9e7042;border-color:#eadbc9}
+.badge.red{background:#f8eeee;color:#a85e66;border-color:#ead8da}
+
+.kpi-grid{gap:10px}
+.kpi{
+  background:#fff;
+  border-radius:10px;
+  box-shadow:none;
+  min-height:120px;
+  position:relative;
+}
+.kpi:before{
+  content:"";
+  position:absolute;
+  left:0;top:17px;bottom:17px;
+  width:3px;
+  background:#d5d9dd;
+}
+.kpi-grid .kpi:nth-child(1):before{background:#486c8e}
+.kpi-grid .kpi:nth-child(2):before{background:#4f8a87}
+.kpi-grid .kpi:nth-child(3):before{background:#746b8f}
+.kpi-grid .kpi:nth-child(4):before{background:#b7834d}
+.kpi span{
+  color:#77818b;
+  font-size:11px;
+  letter-spacing:.2px;
+}
+.kpi b{
+  color:#223344;
+  font-size:29px;
+  font-weight:800;
+  letter-spacing:-.4px;
+}
+.kpi small{
+  color:#8b929a;
+  font-size:11px;
+}
+
+.big-ring{
+  background:conic-gradient(var(--c) calc(var(--p)*1%),#e7e5e1 0);
+  filter:none;
+}
+.big-ring:before{
+  background:#fff;
+  box-shadow:none;
+}
+.big-ring .center b{color:#24384b}
+.big-ring .center span{color:#858b92}
+.platform-mini{
+  background:#faf9f7;
+  border-color:#e1ddd6;
+  box-shadow:none;
+}
+.platform-mini .mini{
+  background:conic-gradient(var(--c) calc(var(--p)*1%),#e8e5df 0);
+}
+.platform-mini .mini:before{background:#fff}
+.platform-mini .mini b{color:#2d3e50}
+.platform-mini span{color:#6f7882}
+
+.ring-card{
+  background:#fff;
+  border-color:#ddd9d1;
+  box-shadow:none;
+  border-radius:10px;
+}
+.ring{
+  background:conic-gradient(var(--c) calc(var(--p)*1%),#e8e5df 0);
+}
+.ring:before{background:#fff}
+.ring b{color:#2e4052}
+.ring-info span{color:#787f87}
+.ring-info strong{color:#243749}
+.ring-info small{color:#92979d}
+
+.chart-wrap svg{
+  background:#fff;
+  border:none;
+  border-radius:0;
+}
+.live-mini-chart{
+  background:#faf9f7;
+  border-color:#e1ddd6;
+  border-radius:8px;
+}
+.mini-chart-title{
+  color:#34495d;
+  font-size:12px;
+}
+.legend{color:#7f8790}
+.legend i{border-radius:2px}
+
+.rank-item{border-color:#ece9e4}
+.rank-item .rank-title{color:#4a5560}
+.rank-item .rank-value{color:#243749}
+.rank-no{
+  background:#f0efec;
+  color:#666f79;
+  border-radius:4px;
+}
+.rank-item:nth-child(1) .rank-no{
+  background:#ede5d3;
+  color:#8a6a2f;
+}
+.rank-item:nth-child(2) .rank-no{
+  background:#e7e9eb;
+  color:#69727b;
+}
+.rank-item:nth-child(3) .rank-no{
+  background:#eee2d9;
+  color:#895f43;
+}
+.rank-bar{background:#ece9e4}
+
+.private-kpi,.question,.funnel-step{
+  background:#fff;
+  border-color:#ddd9d1;
+  box-shadow:none;
+  border-radius:10px;
+}
+.private-kpi b,.funnel-step b{color:#243749}
+.private-kpi span,.funnel-step span{color:#79818a}
+.private-kpi small,.funnel-step small{color:#92979d}
+
+.need-head{color:#46515c}
+.need-track{background:#ebe8e3}
+.question p{color:#4c5660}
+.topic{
+  background:#f1efeb;
+  color:#66717b;
+  border:1px solid #dfdbd4;
+  border-radius:5px;
+}
+
+.live-data-status{
+  background:#f5f7f9;
+  border-color:#dce2e7;
+  box-shadow:none;
+  border-radius:8px;
+}
+.live-data-status b{color:#486c8e}
+.live-data-status span{color:#75808a}
+.live-status-platforms span{
+  background:#fff;
+  border-color:#dce2e7;
+  color:#5f6b76;
+  border-radius:6px;
+}
+
+.strategy-panel{
+  background:#fff;
+  border-color:#d5d1ca;
+  box-shadow:none;
+  border-radius:12px;
+}
+.strategy-head{
+  background:#f8f7f4;
+  border-bottom:1px solid #ddd9d1;
+}
+.strategy-head h2{
+  color:#25384b;
+  font-size:16px;
+}
+.strategy-head p{
+  color:#7a828b;
+  font-size:11px;
+}
+.strategy-block{
+  background:#faf9f7;
+  border-color:#e2ded7;
+  border-radius:9px;
+}
+.strategy-block h3{color:#34495d}
+.strategy-block .signal{
+  background:#fff;
+  border-color:#e1ddd6;
+  color:#525d67;
+  border-radius:7px;
+}
+.strategy-block .signal strong{color:#273b4e}
+.strategy-block textarea{
+  background:#fff;
+  border-color:#dcd8d1;
+  color:#3e4b57;
+  border-radius:7px;
+}
+.strategy-block textarea:focus{
+  border-color:#8b9cad;
+  box-shadow:0 0 0 2px rgba(72,108,142,.08);
+}
+.strategy-actions .save{
+  background:#486c8e;
+  box-shadow:none;
+}
+.strategy-actions .ai{
+  background:#746b8f;
+  box-shadow:none;
+}
+.strategy-actions button{
+  border-radius:7px;
+}
+.strategy-output{
+  background:#f8f7f4;
+  border-color:#e1ddd6;
+  color:#525d67;
+  border-radius:8px;
+}
+
+.table-wrap{border-color:#dedad3}
+.table th{
+  background:#f7f6f3;
+  color:#737b84;
+}
+.table td{
+  color:#4c5660;
+  border-color:#ece9e4;
+}
+
+.anomaly-note{color:#a85e66}
+
+/* Consulting-style section labels */
+#channel-short .section-head h2,
+#channel-live .section-head h2,
+#channel-private .section-head h2,
+#channel-product .section-head h2{
+  color:#25384b;
+}
+
+/* Editorial divider */
+.channel-page .data-col > .card.section{
+  position:relative;
+}
+.channel-page .data-col > .card.section:after{
+  content:"";
+  position:absolute;
+  left:20px;right:20px;bottom:-10px;
+  height:1px;
+  background:transparent;
+}
+
+/* soften platform colors */
+.ptag{
+  border-radius:4px;
+  font-size:10px;
+}
+.tooltip{
+  background:#243749;
+  color:#fff;
+  border:none;
+  box-shadow:0 10px 24px rgba(35,45,55,.18);
+  border-radius:6px;
+}
+
+/* typography refinement */
+.strategy-block textarea,
+.strategy-block .signal,
+.question p,
+.need-row p,
+.section-head p,
+.kpi small,
+.private-kpi small{
+  line-height:1.65;
+}
+
+@media(max-width:820px){
+  .channel-tab span{font-size:13px}
+  .section-head h2{font-size:16px}
+  .kpi b{font-size:27px}
+}
+
+.source-review-block{
+  background:#f6f4ef;
+  border-color:#d8d2c8;
+}
+.review-source-pill{
+  display:inline-block;
+  margin:-2px 0 10px;
+  padding:5px 8px;
+  border-radius:5px;
+  background:#ebe7df;
+  color:#6d716f;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.1px;
+}
+.source-signal{
+  border-left:3px solid #8293a4 !important;
+  padding-left:12px !important;
+}
+.source-signal strong{
+  color:#24394c !important;
+}
+
+.channel-tabs{grid-template-columns:repeat(5,1fr)}
+.channel-tab[data-channel="weekly"] i{background:#7f8a91}
+.summary-strategy-block{background:#f8f7f4}
+.summary-insight{padding:12px 0;border-bottom:1px solid #e5e1da}
+.summary-insight:last-child{border-bottom:0}
+.summary-insight b{display:block;font-size:12px;color:#2b4053;margin-bottom:5px}
+.summary-insight p{margin:0;font-size:13px;line-height:1.7;color:#515c66}
+.strategy-action-list{margin:0;padding-left:22px;color:#45515c}
+.strategy-action-list li{font-size:13px;line-height:1.7;padding:4px 0}
+.strategy-source-note{margin-top:2px;padding:10px 12px;border-radius:7px;background:#f3f1ed;color:#7e858c;font-size:11px;line-height:1.55}
+.weekly-accordion{display:grid;gap:12px}
+.weekly-report-details{background:#fff;border:1px solid #ddd9d1;border-radius:10px;overflow:hidden}
+.weekly-report-details summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 18px;cursor:pointer;background:#faf9f7}
+.weekly-report-details summary::-webkit-details-marker{display:none}
+.weekly-report-details summary span{display:flex;align-items:baseline;gap:10px}
+.weekly-report-details summary b{font-size:14px;color:#2b4053}
+.weekly-report-details summary small{font-size:11px;color:#8b9299}
+.weekly-report-details summary em{font-style:normal;font-size:10px;color:#75818b;padding:4px 7px;background:#eeece7;border-radius:5px}
+.weekly-report-details[open] summary{border-bottom:1px solid #e1ddd6;background:#f7f6f3}
+.weekly-raw-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px}
+.weekly-raw-section{border:1px solid #e0dcd5;border-radius:8px;background:#fcfbf9;padding:15px}
+.weekly-raw-section h3{font-size:13px;color:#2f4355;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid #e8e4de}
+.weekly-raw-section pre{white-space:pre-wrap;word-break:break-word;margin:0;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;font-size:13px;line-height:1.82;color:#4b5660}
+@media(max-width:1000px){.channel-tabs{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.channel-tabs{grid-template-columns:1fr 1fr}.weekly-raw-grid{grid-template-columns:1fr}}
+
+
+/* Cloud deployment controls */
+.cloud-status{
+  border:1px solid var(--line);
+  background:#f8fafc;
+  color:#59687c;
+  border-radius:999px;
+  padding:8px 10px;
+  font-size:10px;
+  white-space:nowrap;
+}
+.cloud-status.ok{background:#eaf8f2;color:#257556;border-color:#cfecde}
+.cloud-status.warn{background:#fff7e9;color:#9b6828;border-color:#f1dfbd}
+.cloud-status.err{background:#fff0f3;color:#ad4656;border-color:#f1cdd4}
+.cloud-modal[hidden]{display:none}
+.cloud-modal{
+  position:fixed;
+  inset:0;
+  z-index:120;
+  display:grid;
+  place-items:center;
+  padding:22px;
+  background:rgba(15,25,40,.42);
+}
+.cloud-modal-card{
+  width:min(560px,100%);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 24px 70px rgba(16,28,46,.24);
+  overflow:hidden;
+}
+.cloud-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  background:#f8fafc;
+}
+.cloud-modal-head h2{margin:0;font-size:15px}
+.cloud-modal-head p{margin:4px 0 0;color:#7a8798;font-size:10px}
+.cloud-close{
+  width:32px;
+  height:32px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+  color:#536276;
+  font-weight:900;
+}
+.cloud-modal-body{padding:16px 18px 18px;display:grid;gap:12px}
+.cloud-field{display:grid;gap:6px}
+.cloud-field label{font-size:10px;color:#65738a;font-weight:800}
+.cloud-field input{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px 11px;
+  color:#27384f;
+  background:#fff;
+}
+.cloud-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.cloud-actions button{
+  border:0;
+  border-radius:10px;
+  padding:10px 12px;
+  color:#fff;
+  background:var(--blue);
+  font-size:10px;
+  font-weight:900;
+}
+.cloud-actions button.secondary{
+  color:#526276;
+  background:#eef3f8;
+}
+.cloud-result{
+  min-height:32px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:9px 10px;
+  font-size:10px;
+  line-height:1.55;
+  color:#68768a;
+  background:#f9fbfd;
+  white-space:pre-wrap;
+}
+@media(max-width:900px){
+  .cloud-status{width:100%;text-align:center}
+}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="brand"><div class="logo">IP</div><div><h1>IP矩阵运营驾驶舱</h1><p>数据监控 × 策略复盘 × 私域沉淀 × 产品转化</p></div></div>
+<div class="controls">
+<div class="platform-pills" id="platformPills">
+<button class="platform-pill active" data-platform="全部平台">全部平台</button>
+<button class="platform-pill" data-platform="抖音">抖音</button>
+<button class="platform-pill" data-platform="视频号">视频号</button>
+<button class="platform-pill" data-platform="小红书">小红书</button>
+</div>
+<select class="control" id="globalPeriod"><option selected="" value="30d">近30天</option><option value="thisWeek">本周</option><option value="lastWeek">上周</option><option value="custom">自定义</option></select><div class="global-custom" id="globalCustom"><input id="globalStart" type="date" value="2026-07-11"/><span>—</span><input id="globalEnd" type="date" value="2026-08-09"/></div><span class="range-hint" id="globalRangeHint">数据范围：近30天</span>
+
+<button class="control" id="refreshData" type="button">刷新数据</button>
+<button class="control" id="openUpload" type="button">上传 Excel</button>
+<span class="cloud-status" id="cloudStatus">数据加载中</span>
+</div>
+</header>
+<div class="channel-nav">
+<div class="channel-tabs">
+<button class="channel-tab active" data-channel="short"><span><i></i>短视频</span><small>内容增长</small></button>
+<button class="channel-tab" data-channel="live"><span><i></i>直播</span><small>场观转化</small></button>
+<button class="channel-tab" data-channel="private"><span><i></i>私域</span><small>沉淀与需求</small></button>
+<button class="channel-tab" data-channel="product"><span><i></i>产品</span><small>成交与交付</small></button>
+<button class="channel-tab" data-channel="weekly"><span><i></i>周报原文</span><small>运营表原始记录</small></button></div>
+</div>
+<main class="main">
+<section class="channel-page active" id="channel-short">
+<div class="channel-layout">
+<div class="data-col">
+<div class="kpi-grid" id="shortKpis"></div>
+<div class="card section">
+<div class="section-head"><div><h2>月涨粉完成进度</h2><p>账号净增口径，来自「乔老涨粉」sheet / 8月截至9日更新</p></div><span class="badge red" id="growthAnomalyBadge">源表总计目标待核</span></div>
+<div class="big-ring-layout">
+<div class="big-ring" id="shortGrowthRing"><div class="center"><b id="shortGrowthPct">—</b><span>总完成度</span></div></div>
+<div><div class="platform-mini-rings" id="shortPlatformRings"></div><div id="shortGrowthNote" style="font-size:8px;color:#839
+0a1;margin-top:10px"></div></div>
+</div>
+</div>
+<div class="card section">
+<div class="section-head"><div><h2>短视频趋势</h2><p>趋势月份独立筛选｜仅展示各平台播放量趋势</p></div><select class="control" id="shortMonthSelect"><option selected="" value="2026-08">8月</option><option value="2026-07">7月</option><option value="2026-06">6月</option><option value="2026-05">5月</option><option value="2026-04">4月</option></select></div>
+<div class="chart-wrap"><svg id="shortTrend" viewbox="0 0 760 300"></svg><div class="legend" id="shortLegend"></div></div>
+</div>
+<div class="ring-grid" id="shortReviewRings"></div>
+<div class="three">
+<div class="card"><div class="section-head"><div><h2>播放排行 Top5</h2><p>按单条播放量</p></div></div><div class="rank-list" id="shortPlayRank"></div></div>
+<div class="card"><div class="section-head"><div><h2>涨粉排行 Top5</h2><p>单条内容归因涨粉</p></div></div><div class="rank-list" id="shortFollowerRank"></div></div>
+<div class="card"><div class="section-head"><div><h2>播粉比 Top5</h2><p>每万播放带来涨粉</p></div></div><div class="rank-list" id="shortRatioRank"></div></div>
+</div>
+</div>
+<aside class="strategy-col">
+<div class="card strategy-panel">
+<div class="strategy-head"><h2>短视频策略摘要</h2><p>基于周报提炼，不直接复述原文</p></div>
+<div class="strategy-body"><div id="shortAutoSignals" style="display:none"></div><div class="strategy-block summary-strategy-block"><h3>策略判断</h3><div class="summary-insight"><b>内容节奏</b><p>当前更适合降低无效更新频率，把有限产能集中到高确定性的选题，而不是追求发布数量。</p></div><div class="summary-insight"><b>选题方向</b><p>优先围绕人口变化、AI、学历、就业、大学与专业选择等未来判断型议题；弱化泛化的家庭教育指导。</p></div><div class="summary-insight"><b>增长逻辑</b><p>近期较低发布量仍能获得自然新增，说明历史内容具备持续带粉能力；增长策略应从堆数量转向提升单条内容的长期价值。</p></div><div class="summary-insight"><b>下一步验证</b><p>继续判断哪些宏观议题能够稳定兼顾播放和涨粉，并沉淀成可持续复制的内容模型。</p></div></div><div class="strategy-block summary-action-block"><h3>下一步重点</h3><ol class="strategy-action-list"><li>保持低频但高质量的更新节奏</li><li>集中测试人口趋势、大学决策、AI与就业相关母题</li><li>按播放、涨粉、播粉比分别复盘，不只看播放量</li></ol></div><div class="strategy-source-note">以上为对运营表周报内容的结构化提炼；原始周报请切换到「周报原文」栏目查看。</div></div>
+</div>
+</aside>
+</div>
+</section>
+<section class="channel-page" id="channel-live">
+<div class="channel-layout">
+<div class="data-col">
+<div class="live-data-status">
+<div>
+<b>直播数据已接入</b>
+<span>视频号 + 抖音｜原始 70 场｜有效 61 场｜最新 2026-07-19</span>
+</div>
+<div class="live-status-platforms">
+<span style="--c:#4f7ef7">视频号 7月 10 场</span>
+<span style="--c:#22b7c7">抖音 7月 5 场</span>
+</div>
+</div><div class="kpi-grid" id="liveKpis"></div>
+<div class="card section">
+<div class="section-head"><div><h2>直播趋势</h2><p>趋势月份独立筛选｜PCU 与平均停留拆图展示，避免量纲混用</p></div><select class="control" id="liveMonthSelect"><option value="2026-08">8月（暂无直播源数据）</option><option selected="" value="2026-07">7月（最新）</option><option value="2026-06">6月</option><option value="2026-05">5月</option><option value="all">全部</option></select></div>
+<div class="chart-wrap"><div class="live-chart-grid"><div class="live-mini-chart"><div class="mini-chart-title">最高在线 PCU</div><svg id="liveTrend" viewbox="0 0 760 260"></svg><div class="legend"><span><i style="background:var(--wx)"></i>视频号</span><span><i style="background:var(--dy)"></i>抖音</span></div></div><div class="live-mini-chart"><div class="mini-chart-title">平均停留时长（分钟）</div><svg id="liveWatchTrend" viewbox="0 0 760 260"></svg><div class="legend"><span><i style="background:var(--purple)"></i>平均停留</span></div></div></div></div>
+</div>
+<div class="ring-grid" id="liveReviewRings"></div>
+<div class="three">
+<div class="card"><div class="section-head"><div><h2>场观排行 Top5</h2><p>观看人数</p></div></div><div class="rank-list" id="liveViewerRank"></div></div>
+<div class="card"><div class="section-head"><div><h2>在线排行 Top5</h2><p>最高在线 PCU</p></div></div><div class="rank-list" id="livePeakRank"></div></div>
+<div class="card"><div class="section-head"><div><h2>转化排行 Top5</h2><p>成交人数 ÷ 观看人数</p></div></div><div class="rank-list" id="liveConversionRank"></div></div>
+</div>
+</div>
+<aside class="strategy-col">
+<div class="card strategy-panel">
+<div class="strategy-head"><h2>直播策略摘要</h2><p>基于周报提炼，不直接复述原文</p></div>
+<div class="strategy-body"><div id="liveAutoSignals" style="display:none"></div><div class="strategy-block summary-strategy-block"><h3>策略判断</h3><div class="summary-insight"><b>形式判断</b><p>围绕一个明确母题连续展开，比随机单场更容易积累用户认知；答疑也应限制问题边界。</p></div><div class="summary-insight"><b>内容组织</b><p>当问题横跨多个学段和场景时，用户难快速判断直播是否与自己相关，因此需要用主题型答疑替代完全开放式答疑。</p></div><div class="summary-insight"><b>交付价值</b><p>交付直播不仅承担履约，也可以作为高质量用户研究入口，用户主动提出的问题能够反哺后续选题和产品设计。</p></div><div class="summary-insight"><b>关键前置</b><p>如果直播还承担销售转化，需要先明确乔老师在销售环节的参与程度，并让公域内容、销售表达和闭门交付保持同一主线。</p></div></div><div class="strategy-block summary-action-block"><h3>下一步重点</h3><ol class="strategy-action-list"><li>公域直播固定主题，不再做跨度过大的泛答疑</li><li>把交付直播的问题持续结构化沉淀</li><li>确认乔老师销售参与边界及闭门直播交付节奏</li></ol></div><div class="strategy-source-note">以上为对运营表周报内容的结构化提炼；原始周报请切换到「周报原文」栏目查看。</div></div>
+</div>
+</aside>
+</div>
+</section>
+<section class="channel-page" id="channel-private">
+<div class="channel-layout">
+<div class="data-col">
+<div class="private-grid">
+<div class="private-kpi"><span>累计私域用户</span><b>278</b><small>免费引流 + 99元 + 299元累计</small></div>
+<div class="private-kpi"><span>299元听课用户</span><b>29</b><small>当前已知付费听课用户</small></div>
+<div class="private-kpi"><span>299元用户占比</span><b>10.4%</b><small>结构占比，不等同严格转化率</small></div>
+<div class="private-kpi"><span>本周交付直播</span><b>3天</b><small>连续交付已完成，反馈积极</small></div>
+</div>
+<div class="two" style="margin-top:15px">
+<div class="card">
+<div class="section-head"><div><h2>用户需求主题分布</h2><p>8条原始问题，去重后7条</p></div></div>
+<div class="need-row"><div class="need-head"><span>大学 / 专业 / 城市重大选择</span><b>3</b></div><div class="need-track"><i style="width:100%;background:var(--wx)"></i></div><p>985 vs 211、专业与城市、C9休学 / 出国 / 转轨。</p></div>
+<div class="need-row"><div class="need-head"><span>核心能力与长期发展</span><b>2</b></div><div class="need-track"><i style="width:67%;background:var(--dy)"></i></div><p>青春期托底、AI + PBL、长期能力培养。</p></div>
+<div class="need-row"><div class="need-head"><span>教育投资与家庭决策</span><b>1</b></div><div class="need-track"><i style="width:33%;background:var(--xhs)"></i></div><p>教育投资性价比与家庭财务可持续性。</p></div>
+<div class="need-row"><div class="need-head"><span>高等教育 / 学术体系</span><b>1</b></div><div class="need-track"><i style="width:33%;background:var(--purple)"></i></div><p>基础学科、国内外学术体系差距。</p></div>
+</div>
+<div class="card">
+<div class="section-head"><div><h2>私域用户需求信号</h2><p>从问题反推用户真正愿意持续付费的需求</p></div></div>
+<div class="strategy-block"><div class="signal"><strong>最强需求：</strong>重大教育决策，而不是泛家庭教育技巧。</div><div class="signal"><strong>用户需要：</strong>比较不同路径的长期收益、成本与风险。</div><div class="signal"><strong>高价值阶段：</strong>高中—大学—研究生衔接阶段需求更强。</div><div class="signal"><strong>AI角色：</strong>更适合作为能力培养的方法，而非产品主角。</div></div>
+</div>
+</div>
+<div class="card section">
+<div class="section-head"><div><h2>代表性用户问题</h2><p>保留问题的决策复杂度，不做过度简化</p></div></div>
+<div class="question-grid">
+<div class="question"><span class="topic">核心能力</span><p>初三住校、青春期、父母尊重孩子且管得少，家长感觉自己无法指导她的人生，还能做什么？</p></div>
+<div class="question"><span class="topic">大学与城市</span><p>普通家庭女孩，从就业和择偶考虑，如何选择大学、城市及文科 / 工科专业？</p></div>
+<div class="question"><span class="topic">院校与专业</span><p>出京985与京内211但能保喜欢的工科专业之间，该如何选择？</p></div>
+<div class="question"><span class="topic">教育投资</span><p>如何从军备竞赛式投入转向更可持续、重适应力和幸福感的教育投资？</p></div>
+<div class="question"><span class="topic">AI + PBL</span><p>如何通过AI和项目式学习把兴趣连接真实世界，并找到可以长期深耕的方向？</p></div>
+<div class="question"><span class="topic">大学危机</span><p>C9学生挂科休学，想出国重读社会学，家长如何判断继续国内本科、出国还是转轨？</p></div>
+</div>
+</div>
+</div>
+<aside class="strategy-col">
+<div class="card strategy-panel">
+<div class="strategy-head"><h2>私域策略摘要</h2><p>基于周报提炼，不直接复述原文</p></div>
+<div class="strategy-body"><div class="strategy-block summary-strategy-block"><h3>策略判断</h3><div class="summary-insight"><b>需求重心</b><p>当前高价值问题主要发生在重大教育选择节点，而不是日常亲子沟通或单一行为管理。</p></div><div class="summary-insight"><b>典型场景</b><p>大学与专业选择、城市选择、大学阶段危机与路径重选、教育投入取舍，是目前最值得重点观察的需求。</p></div><div class="summary-insight"><b>底层诉求</b><p>家长真正希望获得的是降低长期决策不确定性的判断依据，而不是更多泛知识。</p></div><div class="summary-insight"><b>人群验证</b><p>下一阶段应重点确认高中至大学阶段家长是否拥有更强的付费意愿，并建立学段、决策节点、核心问题三层标签。</p></div></div><div class="strategy-block summary-action-block"><h3>下一步重点</h3><ol class="strategy-action-list"><li>对278位私域用户做学段与决策场景分层</li><li>围绕7组高质量问题继续做深访与内容验证</li><li>重点观察高中/大学家长的付费意愿与续费潜力</li></ol></div><div class="strategy-source-note">以上为对运营表周报内容的结构化提炼；原始周报请切换到「周报原文」栏目查看。</div></div>
+</div>
+</aside>
+</div>
+</section>
+<section class="channel-page" id="channel-product">
+<div class="channel-layout">
+<div class="data-col">
+<div class="kpi-grid">
+<div class="card kpi"><span>299元听课用户</span><b>29</b><small>当前已知用户数</small></div>
+<div class="card kpi"><span>累计私域用户</span><b>278</b><small>产品候选池</small></div>
+<div class="card kpi"><span>交付直播</span><b>3天</b><small>本周已完成连续交付</small></div>
+<div class="card kpi"><span>交付反馈</span><b style="font-size:18px;color:var(--green)">积极</b><small>用户主动提出高复杂度问题</small></div>
+</div>
+<div class="card section">
+<div class="section-head"><div><h2>当前产品节点</h2><p>当前已知数据不是严格前后漏斗，按节点展示，不计算虚假转化率</p></div><span class="badge orange">待补分层人数</span></div>
+<div class="product-funnel node-flow">
+<div class="funnel-step"><span>免费 / 低价引流</span><b>已运行</b><small>免费 + 99 + 299 均已测试</small></div>
+<div class="funnel-step"><span>累计私域</span><b>278</b><small>统一沉淀池</small></div>
+<div class="funnel-step"><span>299元听课</span><b>29</b><small>当前已知用户</small></div>
+<div class="funnel-step"><span>3天交付</span><b>完成</b><small>反馈积极</small></div>
+</div>
+</div>
+<div class="two">
+<div class="card">
+<div class="section-head"><div><h2>产品需求方向</h2><p>从交付问题反推</p></div></div>
+<div class="need-row"><div class="need-head"><span>大学 / 专业 / 就业决策</span><b>高</b></div><div class="need-track"><i style="width:100%;background:var(--wx)"></i></div></div>
+<div class="need-row"><div class="need-head"><span>长期能力 / AI时代成长</span><b>中高</b></div><div class="need-track"><i style="width:72%;background:var(--dy)"></i></div></div>
+<div class="need-row"><div class="need-head"><span>泛家庭教育技巧</span><b>中低</b></div><div class="need-track"><i style="width:38%;background:var(--xhs)"></i></div></div>
+</div>
+<div class="card">
+<div class="section-head"><div><h2>产品结论</h2><p>当前更值得继续验证的方向</p></div></div>
+<div class="strategy-block"><div class="signal"><strong>产品价值：</strong>“帮家长做重大教育决策”比“解决单一育儿问题”更匹配乔老师优势。</div><div class="signal"><strong>交付形态：</strong>教授做高价值判断，运营团队承接日常问题和资料整理。</div><div class="signal"><strong>长期产品：</strong>更适合会员圈 / 闭门直播 / 阶段性决策课，而不是泛家庭教育大课。</div></div>
+</div>
+</div>
+</div>
+<aside class="strategy-col">
+<div class="card strategy-panel">
+<div class="strategy-head"><h2>产品策略摘要</h2><p>基于周报提炼，不直接复述原文</p></div>
+<div class="strategy-body"><div class="strategy-block summary-strategy-block"><h3>策略判断</h3><div class="summary-insight"><b>定位收窄</b><p>产品更适合解决重大教育选择中的判断问题，而不是覆盖自驱力、手机、亲子关系等所有家庭教育问题。</p></div><div class="summary-insight"><b>核心价值</b><p>乔老师的稀缺性来自人口、大学、学历、就业与时代变化的综合判断能力，产品承诺应围绕这一能力展开。</p></div><div class="summary-insight"><b>当前瓶颈</b><p>当前更大的制约不是课程内容不足，而是老师参与商业化销售的方式尚未确定，导致发售链路难以固化。</p></div><div class="summary-insight"><b>下一阶段</b><p>优先完成产品方案定稿、销售边界确认和闭门直播节奏，再搭建转化话术并启动首轮测试。</p></div></div><div class="strategy-block summary-action-block"><h3>下一步重点</h3><ol class="strategy-action-list"><li>完成产品定位和核心卖点定稿</li><li>确认乔老师销售参与方式与边界</li><li>确定每月闭门直播交付节奏并启动首轮发售测试</li></ol></div><div class="strategy-source-note">以上为对运营表周报内容的结构化提炼；原始周报请切换到「周报原文」栏目查看。</div></div>
+</div>
+</aside>
+</div>
+</section>
+<section class="channel-page" id="channel-weekly"><div class="card section">
+<div class="section-head">
+<div>
+<h2>周报原文</h2>
+<p>完整保留《乔晓春IP运营表》8.10 中「业绩、周报」sheet 的原始内容。这里不做改写，用于和四个策略摘要栏目相互对照。</p>
+</div>
+<span class="badge blue">6期周报原文</span>
+</div>
+</div><div class="weekly-accordion"><details class="weekly-report-details" open=""><summary><span><b>8月9日周报</b><small>2026-08-09</small></span><em>最新</em></summary><div class="weekly-raw-grid"><div class="weekly-raw-section"><h3>核心战报 (Impact)</h3><pre>数据复盘看板8.9.html</pre></div><div class="weekly-raw-section"><h3>新思考、新发现</h3><pre>1.控制更新频次，依赖长尾效应保持自然涨粉现象，仅更新2条，但全网净增粉仍达1,694 人。常态化长尾流量能持续为账号注入新粉丝。 
+2.通过本周3天交付直播中收集的7组去重问题，发现用户真正的核心痛点分布如下：
+-大学/专业/城市重大选择
+-大学危机与路径重轨
+- 教育投资性价比与长期能力 </pre></div><div class="weekly-raw-section"><h3>卡点、反思</h3><pre>1.产品方案推进滞后，虽已设计完成乔老师产品方案，但老师本周精力全量倾斜在 3 天直播交付上，未能安排与乔老师的深入沟通。
+2.乔老师对商业化销售的参与意愿与边界尚待突破</pre></div><div class="weekly-raw-section"><h3>下周调整、规划</h3><pre>1. 乔老师产品方案深度沟通，明确乔老师是否参与销售发售，敲定每月1场闭门直播的交付节奏，完成方案定稿。
+2.发售准备与转化话术搭建，启动首轮转化测试。</pre></div></div></details><details class="weekly-report-details"><summary><span><b>8月2日周报</b><small>2026-08-02</small></span><em>展开</em></summary><div class="weekly-raw-grid"><div class="weekly-raw-section"><h3>核心战报 (Impact)</h3><pre>IP_Operations_Dashboard_v5.html </pre></div><div class="weekly-raw-section"><h3>新思考、新发现</h3><pre>1.初步完成乔老师内容方向的重新聚焦。
+减少家庭教育指导类内容，降低乔老师账号的更新频率，不再以高频更新为主要目标，把有限的时间和精力集中到他更擅长、更具专业优势的社科、大学与学术成长指导方向。
+
+2.完成社科科研赛道初步调研
+社科科研赛道内已经存在学术志、宇凡聊学术、社科学术汇、学术科研研究等账号，常见模式是低价引流课、录播课、论文训练营和科研陪跑课。公开销量差异较大，部分产品能够实现较高销量，但大多数模式较重，依赖课程研发、专业辅导和持续招生。
+
+3.团队初步认为，乔老师不适合直接复制纯论文辅导或科研培训账号，更适合参考钱婧老师的轻会员模式，面向本硕博学生及其家长，设计一个长期答疑和成长陪伴圈。</pre></div><div class="weekly-raw-section"><h3>卡点、反思</h3><pre>1. 新内容方向尚未形成可执行的内容模型
+
+2. 纯社科科研培训模式的变现并不稳定
+
+3. 会员圈设想仍停留在概念阶段
+
+当前“半年400—500元会员圈”的设想还需要进一步解决：
+最大的风险是交付边界和乔老师的参与方式没有确认</pre></div><div class="weekly-raw-section"><h3>下周调整、规划</h3><pre>完成会员圈产品方案初稿。
+与乔老师进行正式产品沟通。
+乔老师交付之前的《父母认知营》</pre></div></div></details><details class="weekly-report-details"><summary><span><b>7月26日周报</b><small>2026-07-26</small></span><em>展开</em></summary><div class="weekly-raw-grid"><div class="weekly-raw-section"><h3>核心战报 (Impact)</h3><pre>截至目前 7 月累计涨粉为：
+
+视频号：新增 10951
+抖音：新增 10853
+小红书：新增 2387
+总计：新增 24191</pre></div><div class="weekly-raw-section"><h3>新思考、新发现</h3><pre>1.本周选题紧贴社会热点与家庭教育群体焦虑：表现最佳的视频均直击“AI对教育的冲击”“学历贬值”“就业压力”等当下高关注度议题，而“传统文化”“躺平”“成长”等相对泛化的主题播放量明显偏低。
+
+2.乔老师作为人口学专家，从生育率、人口结构、代际更替等推导教育供需变化、升学竞争格局，话题天然具有争议性和讨论空间，
+而具体家庭教育指导，此类内容已是红海，大量育儿博主、心理咨询师深耕多年，乔教授在此领域并无独特优势，表现平平的视频多偏“理念倡导”，难以触发收藏和转发。
+
+3.用户真实需求是“看清未来，减少不确定性”：家长焦虑的除了不知道怎么教育，可能更是不知道“未来社会需要什么样的人”。这种预判型内容正是当前稀缺的</pre></div><div class="weekly-raw-section"><h3>卡点、反思</h3><pre>1.具体家庭教育指导类内容数据显著低于预期
+增量主要来源于少量爆款宏观话题视频，日常家庭教育类内容对粉丝增长的贡献极小，导致账号整体数据波动大。
+
+2. 有流量、有信任，但产品转化链路没有完全跑通
+老师对自身定位的顾虑在直播中得到了验证，老师讲的内容是大学→就业的宏观分析；产品卖的是K12家长的微观指导
+
+3.乔老师本人坦诚的自我剖析与平台环境，问题根源集中在三点：
+①专业定位错位：进入红海竞争，缺乏不可替代性
+家庭教育市场已存在大量成熟的垂直IP，如育儿专家、心理咨询师，相当于“用业余挑战职业”，既难达到头部水平，也无法建立“全国第一”的认知。
+②个人声誉风险：学术身份与商业变现的潜在冲突
+容易引发同行质疑，认为利用教授身份销售非专业内容，可能损害其学术声誉和公共形象。
+③长期商业价值有限：产品“软”，变现天花板低
+用户付费意愿弱：家庭教育理念类内容属于“可学可不学”的知识，用户倾向于免费获取或选择其他低价课程。
+难以体系化：这类话题零散、不易构建严谨的知识体系，长期转化空间狭窄，项目难以规模化。</pre></div><div class="weekly-raw-section"><h3>下周调整、规划</h3><pre>1.内容从泛教育理念收缩至人口趋势+大学决策
+2.产品从父母认知课调整为重大选择决策圈，核心验证目标是高中/大学家长”否成为付费主力
+3.确认圈子或者大学规划课两个轻合作方向中至少一个可跑通；同时验证乔老师能否做到参与公域销售环节</pre></div></div></details><details class="weekly-report-details"><summary><span><b>7月19日周报</b><small>2026-07-19</small></span><em>展开</em></summary><div class="weekly-raw-grid"><div class="weekly-raw-section"><h3>核心战报 (Impact)</h3><pre>截至目前 7 月累计涨粉 为：
+
+视频号：新增 8581
+抖音：新增 9839
+小红书：新增 2199
+
+全平台累计新增：20619</pre></div><div class="weekly-raw-section"><h3>新思考、新发现</h3><pre>本周围绕短期训练营进行了连续三天直播，整体采用"预热蓄水—产品首发—持续验证"的节奏，完成了从内容到产品的第一次完整验证。
+
+本次验证下来，有几个动作是有效的：
+第一，连续主题直播优于单场直播。
+三天直播始终围绕AI时代、人口变化、大学教育、孩子未来等同一主题展开，帮助用户逐步建立认知，整体直播节奏比过去更连贯。
+
+第二，"父母教育判断力"得到用户认可。
+乔老师建立起"父母需要提升教育判断力"这一核心观点，用户认可度较高。用户愿意为乔老师关于教育、大学和时代变化的认知买单，
+
+本周重新验证了用户真正愿意付费的需求。
+用户更关注：
+AI时代学历是否还重要；
+大学应该如何读；
+专业应该如何选择；
+考研、就业、考公如何判断；
+父母应该如何帮助孩子做重大选择。
+</pre></div><div class="weekly-raw-section"><h3>卡点、反思</h3><pre>虽然三天直播完成了产品首轮付费验证，共成交32单，但整体成交率仍然偏低，说明产品转化链路还没有完全跑通。
+
+主要问题体现在四个方面：
+第一，老师擅长的内容，与销售的话术存在错位。
+乔老师真正擅长的是大学教育、学历、就业、AI时代发展和未来趋势判断，但直播销售时，把课程扩大到自驱力、天赋、亲子关系、手机成瘾等多个方向，导致产品承诺超过老师的专业边界。
+
+第二，产品价值表达不够聚焦。
+用户认可"父母教育判断力"，但产品介绍同时强调认知升级、自驱力、天赋、成长规划等多个结果，降低可信度。
+
+第三，免费直播与付费课程差异没有建立。
+免费直播已经覆盖了AI、学历、大学、就业等大量核心观点，而付费课程没有进一步说明"为什么必须继续学习"，导致购买理由不足。
+
+第四，目标人群过宽。
+目前产品同时覆盖小学、初中、高中、大学家长，导致直播内容和产品表达都比较分散。经过本次验证，更值得聚焦的是孩子即将进入或已经进入大学，正在面临专业、大学四年和就业规划的家庭。</pre></div><div class="weekly-raw-section"><h3>下周调整、规划</h3><pre>第一，重新聚焦产品定位。
+把课程定位为帮助家长建立未来教育判断框架，而不是解决所有家庭教育问题。
+
+第二，重新验证目标人群。
+重点回访本次32位购买用户，了解孩子学段、购买原因、最受触动内容和课程期待，判断真正付费人群是否集中在高中至大学阶段，为后续产品定位提供依据。
+
+第三，开展三组直播主题测试。
+主题A：父母认知升级方向——父母的认知决定孩子的未来；
+主题B：大学四年方向——高考只是入场券，大学四年才真正决定孩子未来；
+主题C：重大选择方向——考研、考公还是就业，孩子到底应该怎么选。</pre></div></div></details><details class="weekly-report-details"><summary><span><b>7月12日周报</b><small>2026-07-12</small></span><em>展开</em></summary><div class="weekly-raw-grid"><div class="weekly-raw-section"><h3>核心战报 (Impact)</h3><pre>视频号：新增 4356
+抖音：新增 7840
+小红书：新增 1779
+全平台累计新增：13975</pre></div><div class="weekly-raw-section"><h3>新思考、新发现</h3><pre>本周重点测试了数字人内容，希望解决优质素材不足、真人拍摄成本高的问题。从结果来看，数字人内容能够稳定产出，但涨粉效果整体一般，并没有形成新的增长突破。
+
+原因分析：
+对于乔老师这类认知型IP来说，用户关注的不只是观点本身，更在意教授真实的表达状态、情绪感染力和专家信任感。数字人虽然解决了画面质量的问题，但真人表达中的眼神交流、情绪起伏和现场感有所减弱。</pre></div><div class="weekly-raw-section"><h3>卡点、反思</h3><pre>本周测试两场录播，一场单人、一场对谈
+7月11日直播相比7月9日，累计观看人数增长111%，新增关注增长158%，评论人数增长119%，说明直播互动机制和内容承接能力明显提升，直播模型正在逐步跑通。
+有效进房率仍不足3%，下周重点应优化开场3分钟的话题钩子、固定直播主题
+
+直播画像没有发生明显变化，依然以40-49岁女性、小镇中老年和新锐白领群体为主，账号核心用户标签已经趋于稳定。</pre></div><div class="weekly-raw-section"><h3>下周调整、规划</h3><pre>下周将围绕乔老师短期训练营产品进行连续三天直播，通过同一主题持续,采用"预热—建立认知—产品首发"的节奏，完成从内容到产品的承接。
+
+第一天重点预告,引导用户预约后续直播；第二、三天围绕同一主题完成产品首发，通过课程价值、现场答疑等方式持续强化产品认知，提高转化效率。
+
+</pre></div></div></details><details class="weekly-report-details"><summary><span><b>7月5日周报</b><small>2026-07-05</small></span><em>展开</em></summary><div class="weekly-raw-grid"><div class="weekly-raw-section"><h3>核心战报 (Impact)</h3><pre>视频号：新增 1873
+抖音：新增 1395
+小红书：新增 999</pre></div><div class="weekly-raw-section"><h3>新思考、新发现</h3><pre>本周重点推进乔晓春老师短期训练营产品设计，比较有效的动作是：没有直接从“孩子手机上瘾、学习不专注、自驱力不足”等单一问题切入，而是重新回到乔老师的专家优势和用户的底层焦虑中，去寻找产品的核心定位。
+
+我们发现，乔老师真正适合承接的不是具体行为矫正类问题，而是“教育长期规划不确定”带来的家长焦虑。比如手机上瘾、学习不专注、自驱力不足，确实是家长的常态化痛点，但这些问题更像是表层问题，用户不一定会因为单个痛点去购买一位教授的课程。
+
+这个判断有助于我们把短期训练营从普通家庭教育课中区分出来，形成更适合乔老师的产品定位。
+
+本周最重要的用户需求发现是：面向全年龄段家长的共性焦虑，不是某一个具体教育场景，而是对孩子长期发展路径的不确定。</pre></div><div class="weekly-raw-section"><h3>卡点、反思</h3><pre>本周两场直播整体数据表现一般，没有达到预期。
+1.谢康校长对谈场没有达到预期
+谢康校长此前围绕自己创办的创新学校曾经获得不错的数据和流量反馈。但从实际直播表现看，直播间在线人数没有明显爬升，说明这个主题虽然有话题度，但没有充分转化成直播间停留和互动。
+
+原因可能有三点：
+第一，谢康校长的表达重点更多放在创新学校本身，而不是家长最关心的“AI时代孩子到底应该怎么学”。因此直播内容对趋势问题的解释不够深入。
+第二，乔教授对创新学校培养模式提出了一些质疑，但谢康校长没有很好接住这些质疑点，导致对谈中的观点碰撞没有被充分放大。
+第三，创新学校本身学费较高，关注人群相对窄。对多数普通中产家庭来说，创新学校更像是一个“可观看的话题”，但不一定是一个“我马上需要解决的问题”。
+
+
+2.主持人与乔教授答疑场数据相对更好，但仍然没有真正跑起来
+乔教授在直播间直接回应用户问题、进行观点输出，是更适合当前账号的直播形式。但这场直播也没有真正跑出理想数据，主要问题在于问题过于分散，用户画像和主题主线不够集中。
+既要回答小学阶段的学习专注问题，又要回答研究生就业问题，兼顾不同年龄段家长的教育焦虑。导致直播间缺少一个明确的中心议题。用户进来后，很难马上判断“这场直播是不是专门为我讲的”
+
+
+后续答疑场需要从“开放式答疑”改成“主题型答疑”。</pre></div><div class="weekly-raw-section"><h3>下周调整、规划</h3><pre>第一，细化短期训练营课程内容。
+在现有框架基础上，把课程提纲进一步和用户刚需结合，明确每一节课解决什么问题、对应哪类家长焦虑、给用户什么具体收获。
+
+第二，打磨产品核心概念和销售表达。
+训练营需要套上一个可以长期传播的核心概念，让它既能承接短视频爆款，也能在直播间反复讲、持续打。下周要重点完成产品主张、卖点、适合人群、交付形式和直播转化话术。
+
+第三，准备产品上线和直播承接。
+接下来直播内容要围绕产品主线设计，不再做泛答疑，而是通过“父母引路人”“AI时代学习方式变化”等主题，把用户焦虑逐步引导到训练营。上线前同步准备课程详情页、直播间话术、评论区引导和私域承接路径，确保产品推出后能形成完整转化闭环。</pre></div></div></details></div></section></main>
+
+<div class="cloud-modal" id="cloudModal" hidden>
+  <div class="cloud-modal-card">
+    <div class="cloud-modal-head">
+      <div>
+        <h2>上传数据</h2>
+        <p>Excel / CSV / JSON</p>
+      </div>
+      <button class="cloud-close" id="closeUpload" type="button" aria-label="关闭">×</button>
+    </div>
+    <div class="cloud-modal-body">
+      <div class="cloud-field">
+        <label for="adminPassword">管理密码</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" placeholder="ADMIN_PASSWORD 或 SITE_PASSWORD">
+      </div>
+      <div class="cloud-field">
+        <label for="dataFiles">数据文件</label>
+        <input id="dataFiles" type="file" multiple accept=".xlsx,.xls,.csv,.json,application/json,text/csv">
+      </div>
+      <div class="cloud-actions">
+        <button id="submitUpload" type="button">上传并更新</button>
+        <button class="secondary" id="downloadCurrentData" type="button">下载当前 JSON</button>
+      </div>
+      <div class="cloud-result" id="uploadResult">等待上传</div>
+    </div>
+  </div>
+</div>
+<div class="tooltip" id="tooltip"></div>
+<scrip
+t>
+let SHORT_DATA=[];
+let LIVE_DATA=[];
+let META={asOf:"2026-08-09"};
+let GROWTH_DATA={sheetName:"乔老涨粉",months:{}};
+let WEEKLY_GROWTH_DATA={weeks:[],latest:{platforms:{}},previous:{platforms:{}}};
+const COLORS={"抖音":"#22b7c7","视频号":"#4f7ef7","小红书":"#e96876"};
+let state={platform:"全部平台",channel:"short"};
+
+const fmt=n=>Number(n||0).toLocaleString("zh-CN");
+const compact=n=>{n=Number(n||0);if(n>=100000000)return(n/100000000).toFixed(2)+"亿";if(n>=10000)return(n/10000).toFixed(n>=100000?1:2)+"万";return fmt(Math.round(n))};
+const pct=n=>Number.isFinite(n)?(n*100).toFixed(1)+"%":"—";
+const dateObj=s=>new Date(s.replace(" ","T"));
+const sum=(rows,key)=>rows.reduce((s,x)=>s+Number(x[key]||0),0);
+const tooltip=document.getElementById("tooltip");
+
+const globalPeriod=document.getElementById("globalPeriod");
+const globalCustom=document.getElementById("globalCustom");
+const globalStart=document.getElementById("globalStart");
+const globalEnd=document.getElementById("globalEnd");
+const globalRangeHint=document.getElementById("globalRangeHint");
+const platformPills=document.getElementById("platformPills");
+const growthAnomalyBadge=document.getElementById("growthAnomalyBadge");
+const liveWatchTrend=document.getElementById("liveWatchTrend");
+
+let dashboardPayload=null;
+const cloudStatus=document.getElementById("cloudStatus");
+const refreshData=document.getElementById("refreshData");
+const openUpload=document.getElementById("openUpload");
+const closeUpload=document.getElementById("closeUpload");
+const cloudModal=document.getElementById("cloudModal");
+const adminPassword=document.getElementById("adminPassword");
+const dataFiles=document.getElementById("dataFiles");
+const submitUpload=document.getElementById("submitUpload");
+const uploadResult=document.getElementById("uploadResult");
+const downloadCurrentData=document.getElementById("downloadCurrentData");
+const XLSX_CDN="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js";
+
+function setCloudStatus(text,type=""){
+  if(!cloudStatus)return;
+  cloudStatus.textContent=text;
+  cloudStatus.className="cloud-status"+(type?" "+type:"");
+}
+function normalizeDashboardPayload(src={}){
+  const p=src.data||src.payload||src;
+  return {
+    shortData:Array.isArray(p.shortData)?p.shortData:(Array.isArray(p.SHORT_DATA)?p.SHORT_DATA:[]),
+    liveData:Array.isArray(p.liveData)?p.liveData:(Array.isArray(p.LIVE_DATA)?p.LIVE_DATA:[]),
+    meta:p.meta||p.META||{},
+    growthData:p.growthData||p.GROWTH_DATA||{sheetName:"乔老涨粉",months:{}},
+    weeklyGrowthData:p.weeklyGrowthData||p.WEEKLY_GROWTH_DATA||{weeks:[],latest:{platforms:{}},previous:{platforms:{}}},
+    updatedAt:p.updatedAt||p.uploadedAt||null,
+    source:p.source||p.fileName||"云端数据"
+  };
+}
+function maxIsoDate(rows){
+  const dates=rows.map(x=>String(x.date||"").slice(0,10)).filter(Boolean).sort();
+  return dates.length?dates[dates.length-1]:null;
+}
+function ensureMeta(payload){
+  const shortMax=maxIsoDate(payload.shortData);
+  const liveMax=maxIsoDate(payload.liveData);
+  payload.meta=payload.meta||{};
+  payload.meta.asOf=payload.meta.asOf||[shortMax,liveMax].filter(Boolean).sort().pop()||"2026-08-09";
+  if(shortMax)payload.meta.shortMax=payload.meta.shortMax||shortMax;
+  if(liveMax)payload.meta.liveMax=payload.meta.liveMax||liveMax;
+  return payload;
+}
+function applyDashboardPayload(payload){
+  dashboardPayload=ensureMeta(normalizeDashboardPayload(payload));
+  SHORT_DATA=dashboardPayload.shortData;
+  LIVE_DATA=dashboardPayload.liveData;
+  META=dashboardPayload.meta;
+  GROWTH_DATA=dashboardPayload.growthData;
+  WEEKLY_GROWTH_DATA=dashboardPayload.weeklyGrowthData;
+  if(!WEEKLY_GROWTH_DATA.latest&&Array.isArray(WEEKLY_GROWTH_DATA.weeks)){
+    WEEKLY_GROWTH_DATA.latest=WEEKLY_GROWTH_DATA.weeks[WEEKLY_GROWTH_DATA.weeks.length-1]||{platforms:{}};
+    WEEKLY_GROWTH_DATA.previous=WEEKLY_GROWTH_DATA.weeks[WEEKLY_GROWTH_DATA.weeks.length-2]||{platforms:{}};
+  }
+  populateMonthSelects();
+}
+function monthValue(dateText){return String(dateText||"").slice(0,7)}
+function populateSelect(select,months,selectedFallback){
+  if(!select||!months.length)return;
+  const current=select.value||selectedFallback||months[0];
+  select.innerHTML=months.map(m=>'<option value="'+m+'">'+Number(m.slice(5,7))+'月'+(m===monthValue(META.asOf)?"（最新）":"")+'</option>').join("");
+  select.value=months.includes(current)?current:months[0];
+}
+function populateMonthSelects(){
+  const shortMonths=[...new Set(SHORT_DATA.map(x=>monthValue(x.date)).filter(Boolean))].sort().reverse();
+  const liveMonths=[...new Set(LIVE_DATA.filter(x=>!x.isTest).map(x=>monthValue(x.date)).filter(Boolean))].sort().reverse();
+  populateSelect(shortMonthSelect,shortMonths,"2026-08");
+  populateSelect(liveMonthSelect,liveMonths,"2026-07");
+  if(liveMonthSelect&&!Array.from(liveMonthSelect.options).some(x=>x.value==="all")){
+    liveMonthSelect.insertAdjacentHTML("beforeend",'<option value="all">全部</option>');
+  }
+}
+async function loadDashboardData(){
+  setCloudStatus("数据加载中");
+  try{
+    const res=await fetch("/api/data",{cache:"no-store"});
+    if(!res.ok)throw new Error("api "+res.status);
+    const payload=await res.json();
+    applyDashboardPayload(payload);
+    setCloudStatus("云端数据 · "+(META.asOf||"已同步"),"ok");
+  }catch(err){
+    const fallback=await fetch("/dashboard-data.json",{cache:"no-store"}).then(r=>r.json());
+    applyDashboardPayload(fallback);
+    setCloudStatus("初始数据 · "+(META.asOf||"本地兜底"),"warn");
+  }
+}
+function rerenderDashboard(){
+  updateRangeHint();
+  renderShort();
+  renderLive();
+}
+function currentDashboardPayload(){
+  return normalizeDashboardPayload({
+    shortData:SHORT_DATA,
+    liveData:LIVE_DATA,
+    meta:META,
+    growthData:GROWTH_DATA,
+    weeklyGrowthData:WEEKLY_GROWTH_DATA,
+    source:dashboardPayload?.source||"当前页面",
+    updatedAt:new Date().toISOString()
+  });
+}
+function clonePayload(payload){return JSON.parse(JSON.stringify(payload))}
+function normKey(v){return String(v??"").replace(/\s+/g,"").replace(/[()（）:：_\\-\\/]/g,"").toLowerCase()}
+function valueBy(row,names){
+  const lookup={};
+  Object.entries(row).forEach(([k,v])=>lookup[normKey(k)]=v);
+  for(const name of names){
+    const v=lookup[normKey(name)];
+    if(v!==undefined&&v!==null&&String(v).trim()!=="")return v;
+  }
+  return null;
+}
+function toNumber(v){
+  if(v===null||v===undefined||v==="")return 0;
+  if(typeof v==="number")return Number.isFinite(v)?v:0;
+  const s=String(v).replace(/[,%￥¥,，\s]/g,"").replace(/秒|分钟|小时/g,"");
+  const n=Number(s);
+  return Number.isFinite(n)?n:0;
+}
+function toNullableNumber(v){
+  if(v===null||v===undefined||String(v).trim()==="")return null;
+  return toNumber(v);
+}
+function toPercent(v){
+  if(v===null||v===undefined||String(v).trim()==="")return null;
+  if(typeof v==="number")return v>1?v/100:v;
+  const s=String(v).trim();
+  const n=toNumber(s);
+  return s.includes("%")?n/100:(n>1?n/100:n);
+}
+function excelSerialToDate(n){
+  const utc=(Number(n)-25569)*86400*1000;
+  return new Date(utc);
+}
+function pad2(n){return String(n).padStart(2,"0")}
+function formatDateTime(d){
+  if(!d||Number.isNaN(d.getTime()))return "";
+  return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate())+" "+pad2(d.getHours())+":"+pad2(d.getMinutes())+":"+pad2(d.getSeconds());
+}
+function toDateTime(v){
+  if(v instanceof Date)return formatDateTime(v);
+  if(typeof v==="number")return formatDateTime(excelSerialToDate(v));
+  const raw=String(v??"").trim();
+  if(!raw)return "";
+  if(/^\d+(\.\d+)?$/.test(raw)&&Number(raw)>30000)return formatDateTime(excelSerialToDate(Number(raw)));
+  const s=raw
+    .replace(/年|\/|\./g,"-")
+    .replace(/月/g,"-")
+    .replace(/日/g," ")
+    .replace(/时/g,":")
+    .replace(/分/g,":")
+    .replace(/秒/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+  const parts=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:\s+(\d{1,2})(?::(\d{1,2}))?(?::(\d{1,2}))?)?/);
+  if(!parts)return raw;
+  return parts[1]+"-"+pad2(parts[2])+"-"+pad2(parts[3])+" "+pad2(parts[4]||0)+":"+pad2(parts[5]||0)+":"+pad2(parts[6]||0);
+}
+function durationSeconds(v){
+  if(typeof v==="number")return v;
+  const s=String(v??"");
+  if(/^\d+(\.\d+)?$/.test(s.trim()))return Number(s);
+  const h=Number((s.match(/(\d+(?:\.\d+)?)\s*小时/)||[])[1]||0);
+  const m=Number((s.match(/(\d+(?:\.\d+)?)\s*分钟/)||[])[1]||0);
+  const sec=Number((s.match(/(\d+(?:\.\d+)?)\s*秒/)||[])[1]||0);
+  return h*3600+m*60+sec;
+}
+function secondsFromWatch(v){
+  if(typeof v==="number")return v;
+  const s=String(v??"");
+  if(s.includes("小时")||s.includes("分钟")||s.includes("秒"))return durationSeconds(s);
+  return toNumber(s);
+}
+function guessTopic(title){
+  const t=String(title||"");
+  if(/AI|人工智能|科技/.test(t))return "AI与未来";
+  if(/人口|生育|养老|老龄|社会/.test(t))return "人口与社会";
+  if(/大学|学历|专业|就业|考研|志愿|博士|985|211|C9/.test(t))return "升学与大学";
+  if(/学习|读书|成长|能力|作文|科研/.test(t))return "学习与成长";
+  return "家庭教育";
+}
+function rowsToObjects(rows){
+  let headerIndex=-1;
+  for(let i=0;i<Math.min(rows.length,12);i++){
+    const row=rows[i].map(x=>String(x??""));
+    const score=row.filter(x=>/发布时间|作品名称|视频描述|笔记标题|直播|平台|月初粉丝数|观看人数|播放量|涨粉/.test(x)).length;
+    if(score>=2){headerIndex=i;break}
+  }
+  if(headerIndex<0)return [];
+  const headers=rows[headerIndex].map((h,i)=>String(h??("列"+(i+1))).trim()||("列"+(i+1)));
+  return rows.slice(headerIndex+1).map(r=>{
+    const obj={};
+    headers.forEach((h,i)=>obj[h]=r[i]??null);
+    return obj;
+  });
+}
+function detectPlatform(fileName,sheetName,headers,kind){
+  const hay=(fileName+" "+sheetName+" "+headers.join(" ")).toLowerCase();
+  if(hay.includes("小红书")||hay.includes("笔记标题"))return "小红书";
+  if(hay.includes("抖音")||hay.includes("5s完播")||hay.includes("主页访问"))return "抖音";
+  if(hay.includes("视频号")||hay.includes("视频描述"))return "视频号";
+  return kind==="live"?"视频号":"抖音";
+}
+function parseShortObjects(objects,fileName,sheetName){
+  if(!objects.length)return [];
+  const headers=Object.keys(objects[0]);
+  const headerText=headers.join(" ");
+  if(!/发布时间|作品名称|视频描述|笔记标题|播放量|观看量/.test(headerText))return [];
+  if(/直播/.test(headerText)&&!/作品名称|视频描述|笔记标题/.test(headerText))return [];
+  const platform=detectPlatform(fileName,sheetName,headers,"short");
+  return objects.map(row=>{
+    const title=valueBy(row,["视频描述","作品名称","笔记标题","标题","作品标题"]);
+    const date=toDateTime(valueBy(row,["发布时间","首次发布时间","发布日期","创建时间"]));
+    const views=toNumber(valueBy(row,["播放量","观看量","浏览量","阅读量"]));
+    if(!title||!date||!views)return null;
+    return {
+      ip:"乔晓春",
+      platform,
+      date,
+      title:String(title),
+      topic:guessTopic(title),
+      views,
+      exposure:toNullableNumber(valueBy(row,["曝光","曝光量"])),
+      completion:toPercent(valueBy(row,["完播率"])),
+      completion5:toPercent(valueBy(row,["5s完播率","5秒完播率"])),
+      completion30:toPercent(valueBy(row,["30秒完播率"])),
+      avgWatch:secondsFromWatch(valueBy(row,["平均播放时长","人均观看时长","平均观看时长"])),
+      followers:toNumber(valueBy(row,["关注量","粉丝增量","涨粉","新增关注","新增粉丝"])),
+      likes:toNumber(valueBy(row,["喜欢","点赞","点赞量"])),
+      comments:toNumber(valueBy(row,["评论量","评论","评论数"])),
+      shares:toNumber(valueBy(row,["分享量","分享","分享数","转发聊天和朋友圈"])),
+      favorites:toNumber(valueBy(row,["收藏量","收藏"])),
+      privateClicks:toNullableNumber(valueBy(row,["企微链接点击次数","企微链接点击人数"])),
+      privateAdds:toNullableNumber(valueBy(row,["添加到通讯录次数","添加到通讯录人数"])),
+      attributedGmv:null
+    };
+  }).filter(Boolean);
+}
+function parseLiveObjects(objects,fileName,sheetName){
+  if(!objects.length)return [];
+  const headers=Object.keys(objects[0]);
+  const headerText=headers.join(" ");
+  if(!/直播|开播|观看人数|最高在线/.test(headerText))return [];
+  const platform=detectPlatform(fileName,sheetName,headers,"live");
+  return objects.map(row=>{
+    const title=valueBy(row,["直播主题","直播间标题","标题"]);
+    const date=toDateTime(valueBy(row,["直播开始时间","开播时间","开始时间"]));
+    const viewers=toNumber(valueBy(row,["观看人数","直播间观看人数","直播间观看人次","观看次数"]));
+    if(!title||!date||!viewers)return null;
+    return {
+      ip:"乔晓春",
+      platform,
+      date,
+      title:String(title),
+      duration:durationSeconds(valueBy(row,["直播时长","直播时长（秒）","直播时长秒"])),
+      viewers,
+      watches:toNumber(valueBy(row,["观看次数","直播间观看人次"])),
+      peak:toNumber(valueBy(row,["最高在线","最高在线人数"])),
+      avgWatch:secondsFromWatch(valueBy(row,["平均观看时长","人均观看时长"])),
+      likes:toNumber(valueBy(row,["点赞次数","点赞量"])),
+      comments:toNumber(valueBy(row,["评论次数","评论量"])),
+      shares:toNumber(valueBy(row,["分享次数","分享量"])),
+      newFollowers:toNumber(valueBy(row,["新增关注","新增粉丝数","新增粉丝"])),
+      gmv:toNumber(valueBy(row,["成交金额","GMV","直播间成交金额"])),
+      orders:toNumber(valueBy(row,["成交订单数","直播间成交订单数"])),
+      buyers:toNumber(valueBy(row,["成交人数","成交粉丝数"])),
+      isTest:/测试/.test(String(title))
+    };
+  }).filter(Boolean);
+}
+function parseGrowthRows(rows,sheetName){
+  if(!/涨粉/.test(sheetName))return null;
+  const months={};
+  for(let i=0;i<rows.length;i++){
+    const first=String(rows[i]?.[0]??"").trim();
+    const month=String(rows[i]?.[1]??"").trim();
+    if(first!=="月份"||!month)continue;
+    const headers=(rows[i+1]||[]).map(x=>String(x??"").trim());
+    const col=name=>headers.findIndex(h=>normKey(h)===normKey(name));
+    const idx={
+      platform:col("平台"),
+      account:col("账号名"),
+      start:col("月初粉丝数"),
+      end:col("现粉丝数"),
+      growth:col("本月净增"),
+      lastGrowth:col("上月净增"),
+      target:col("净增目标120%"),
+      diff:col("差额"),
+      postCount:col("发布数"),
+      playFollowerRatio:col("播粉比"),
+      likeFollowerRatio:col("赞粉比")
+    };
+    months[month]=months[month]||{platforms:{}};
+    let lastPlatform="";
+    for(let r=i+2;r<rows.length;r++){
+      const row=rows[r]||[];
+      const marker=String(row[0]??"").trim();
+      if(marker==="月份")break;
+      if(row.every(x=>x===null||x===undefined||String(x).trim()===""))continue;
+      const platform=String(row[idx.platform]??"").trim()||lastPlatform;
+      if(!platform)continue;
+      lastPlatform=platform;
+      const rec={
+        account:String(row[idx.account]??"").trim(),
+        monthStart:toNumber(row[idx.start]),
+        monthEnd:toNumber(row[idx.end]),
+        growth:toNumber(row[idx.growth]),
+        lastGrowth:toNullableNumber(row[idx.lastGrowth]),
+        target:toNullableNumber(row[idx.target]),
+        diff:toNullableNumber(row[idx.diff]),
+        postCount:toNullableNumber(row[idx.postCount]),
+        playFollowerRatio:toNullableNumber(row[idx.playFollowerRatio]),
+        likeFollowerRatio:toNullableNumber(row[idx.likeFollowerRatio])
+      };
+      if(platform==="总计"){
+        months[month].total=rec;
+      }else{
+        const prev=months[month].platforms[platform];
+        if(prev){
+          ["monthStart","monthEnd","growth","target","postCount"].forEach(k=>prev[k]=toNumber(prev[k])+toNumber(rec[k]));
+          prev.account=[prev.account,rec.account].filter(Boolean).join(" + ");
+        }else{
+          months[month].platforms[platform]=rec;
+        }
+      }
+    }
+  }
+  return Object.keys(months).length?{sheetName,months}:null;
+}
+function mergeUnique(rows,keyFn){
+  const map=new Map();
+  rows.forEach(row=>map.set(keyFn(row),row));
+  return [...map.values()].sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+}
+async function ensureXlsx(){
+  if(window.XLSX)return window.XLSX;
+  await new Promise((resolve,reject)=>{
+    const s=document.createElement("script");
+    s.src=XLSX_CDN;
+    s.onload=resolve;
+    s.onerror=()=>reject(new Error("Excel 解析库加载失败"));
+    document.head.appendChild(s);
+  });
+  return window.XLSX;
+}
+async function parseDataFiles(files){
+  const next=clonePayload(currentDashboardPayload());
+  const parsed={short:[],live:[],growth:null,json:false,files:[...files].map(f=>f.name)};
+  for(const file of files){
+    if(/\.json$/i.test(file.name)){
+      const payload=normalizeDashboardPayload(JSON.parse(await file.text()));
+      Object.assign(next,payload,{source:file.name,updatedAt:new Date().toISOString()});
+      parsed.json=true;
+      continue;
+    }
+    const XLSX=await ensureXlsx();
+    const buffer=await file.arrayBuffer();
+    const workbook=XLSX.read(buffer,{type:"array",cellDates:true,raw:false});
+    workbook.SheetNames.forEach(sheetName=>{
+      const sheet=workbook.Sheets[sheetName];
+      const rows=XLSX.utils.sheet_to_json(sheet,{header:1,defval:null,raw:false});
+      const growth=parseGrowthRows(rows,sheetName);
+      if(growth)parsed.growth=growth;
+      const objects=rowsToObjects(rows);
+      parsed.short.push(...parseShortObjects(objects,file.name,sheetName));
+      parsed.live.push(...parseLiveObjects(objects,file.name,sheetName));
+    });
+  }
+  if(parsed.short.length){
+    next.shortData=mergeUnique(parsed.short,row=>row.platform+"|"+row.date+"|"+row.title);
+  }
+  if(parsed.live.length){
+    next.liveData=mergeUnique(parsed.live,row=>row.platform+"|"+row.date+"|"+row.title);
+  }
+  if(parsed.growth){
+    next.growthData=parsed.growth;
+  }
+  next.meta=next.meta||{};
+  next.meta.asOf=[maxIsoDate(next.shortData),maxIsoDate(next.liveData),next.meta.asOf].filter(Boolean).sort().pop();
+  next.source=parsed.files.join("、");
+  next.updatedAt=new Date().toISOString();
+  return {payload:next,summary:"短视频 "+parsed.short.length+" 条；直播 "+parsed.live.length+" 场；涨粉表 "+(parsed.growth?"已更新":"沿用当前")+"。"};
+}
+async function uploadPayload(payload,password){
+  const res=await fetch("/api/upload",{
+    method:"POST",
+    headers:{"content-type":"application/json","x-dashboard-password":password||""},
+    body:JSON.stringify({data:payload})
+  });
+  const text=await res.text();
+  let body={};
+  try{body=JSON.parse(text)}catch(e){body={message:text}}
+  if(!res.ok)throw new Error(body.error||body.message||("上传失败 "+res.status));
+  return body;
+}
+function downloadJson(payload){
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="dashboard-data-"+(META.asOf||"latest")+".json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+async function bootDashboard(){
+  await loadDashboardData();
+  loadReviews();
+  syncPlatformUI();
+  rerenderDashboard();
+}
+
+
+function showTip(e,html){tooltip.innerHTML=html;tooltip.style.left=e.clientX+"px";tooltip.style.top=e.clientY+"px";tooltip.style.opacity=1}
+function hideTip(){tooltip.style.opacity=0}
+function svgEl(tag,a={}){const el=document.createElementNS("http://www.w3.org/2000/svg",tag);Object.entries(a).forEach(([k,v])=>el.setAttribute(k,v));return el}
+
+function smoothPath(points){
+  if(!points || !points.length) return "";
+  if(points.length===1) return `M ${points[0].x} ${points[0].y}`;
+  let d = `M ${points[0].x} ${points[0].y}`;
+  for(let i=0;i<points.length-1;i++){
+    const p0 = points[i-1] || points[i];
+    const p1 = points[i];
+    const p2 = points[i+1];
+    const p3 = points[i+2] || p2;
+    const cp1x = p1.x + (p2.x - p0.x) / 6;
+    const cp1y = p1.y + (p2.y - p0.y) / 6;
+    const cp2x = p2.x - (p3.x - p1.x) / 6;
+    const cp2y = p2.y - (p3.y - p1.y) / 6;
+    d += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
+  }
+  return d;
+}
+
+function pMatch(row){return state.platform==="全部平台"||row.platform===state.platform}
+function monthRange(v){
+  const [y,m]=v.split("-").map(Number);
+  const start=new Date(y,m-1,1);
+  let end=new Date(y,m,0,23,59,59);
+  if(v==="2026-08")end=new Date("2026-08-09T23:59:59");
+  return {start,end};
+}
+function inRange(row,r){const d=dateObj(row.date);return d>=r.start&&d<=r.end}
+function dayStart(d){const x=new Date(d);x.setHours(0,0,0,0);return x}
+function dayEnd(d){const x=new Date(d);x.setHours(23,59,59,999);return x}
+function currentGlobalRange(){
+  const now=new Date((META.asOf||"2026-08-09")+"T23:59:59");
+  if(globalPeriod.value==="custom")return {start:new Date(globalStart.value+"T00:00:00"),end:new Date(globalEnd.value+"T23:59:59"),label:`${globalStart.value}—${globalEnd.value}`};
+  if(globalPeriod.value==="thisWeek")return {start:new Date("2026-08-03T00:00:00"),end:now,label:"本周 8/3—8/9"};
+  if(globalPeriod.value==="lastWeek")return {start:new Date("2026-0
+7-27T00:00:00"),end:new Date("2026-08-02T23:59:59"),label:"上周 7/27—8/2"};
+  return {start:new Date("2026-07-11T00:00:00"),end:now,label:"近30天 7/11—8/9"};
+}
+function previousEqualRange(r){
+  const days=Math.round((dayStart(r.end)-dayStart(r.start))/86400000)+1;
+  const end=new Date(dayStart(r.start).getTime()-1);
+  const start=new Date(dayStart(end).getTime()-(days-1)*86400000);
+  return {start:dayStart(start),end:dayEnd(end)};
+}
+function samePeriodPrevMonthRange(v){
+  const [y,m]=v.split("-").map(Number),curr=monthRange(v),day=curr.end.getDate();
+  return {start:new Date(y,m-2,1),end:new Date(y,m-2,day,23,59,59)};
+}
+function shortRows(){const r=currentGlobalRange();return SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,r))}
+function shortTrendRows(){const r=monthRange(shortMonthSelect.value);return SHORT_DATA.filter(x=>pMatch(x)&&inRange(x,r))}
+function liveRows(){const r=currentGlobalRange();return LIVE_DATA.filter(x=>!x.isTest&&pMatch(x)&&inRange(x,r))}
+function liveMonthRows(){
+  const m=liveMonthSelect.value;
+  if(m==="all")return LIVE_DATA.filter(x=>!x.isTest&&pMatch(x));
+  const r=monthRange(m);return LIVE_DATA.filter(x=>!x.isTest&&pMatch(x)&&inRange(x,r))
+}
+function updateRangeHint(){globalRangeHint.textContent="数据范围："+currentGlobalRange().label}
+
+function prevMonth(v){const [y,m]=v.split("-").map(Number),d=new Date(y,m-2,1);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}`}
+function monthLabel(v){return Number(v.slice(5,7))+"月"}
+function opsGrowth(platform=state.platform,month="8月"){const src=GROWTH_DATA.months[month];if(!src)return {growth:0,target:0,completion:NaN};if(platform==="全部平台"){const t=src.total||{};return {growth:Number(t.growth||0),target:Number(t.target||0),completion:Number(t.target||0)?Number(t.growth||0)/Number(t.target):NaN}}const r=src.platforms?.[platform]||{};return {growth:Number(r.growth||0),target:Number(r.target||0),completion:Number(r.target||0)?Number(r.growth||0)/Number(r.target):NaN}}
+function delta(curr,prev){return prev?curr/prev-1:NaN}
+function ringCard(label,value,d,note){const pc=Number.isFinite(d)?Math.min(100,Math.abs(d)*100):0,c=Number.isFinite(d)?(d>=0?"#31b47e":"#e96876"):"#aab4c2",center=Number.isFinite(d)?`${d>=0?"+":""}${(d*100).toFixed(1)}%`:"—";return `<div class="ring-card"><div class="ring" style="--p:${pc};--c:${c}"><b>${center}</b></div><div class="ring-info"><span>${label}</span><strong>${value}</strong><small>${note}</small></div></div>`}
+function rankHtml(rows,mode){if(!rows.length)return '<div style="padding:20px;text-align:center;color:#8b96a5;font-size:9px">暂无数据</div>';const data=[...rows].map(x=>({...x,ratio:x.views?x.followers/x.views:0,conv:x.viewers?x.buyers/x.viewers:0}));data.sort((a,b)=>{if(mode==="play")return b.views-a.views;if(mode==="followers")return b.followers-a.followers;if(mode==="ratio")return b.ratio-a.ratio;if(mode==="viewer")return b.viewers-a.viewers;if(mode==="peak")return b.peak-a.peak;return b.conv-a.conv});const top=data.slice(0,5),mx=Math.max(...top.map(x=>mode==="play"?x.views:mode==="followers"?x.followers:mode==="ratio"?x.ratio:mode==="viewer"?x.viewers:mode==="peak"?x.peak:x.conv),1);return top.map((x,i)=>{const raw=mode==="play"?x.views:mode==="followers"?x.followers:mode==="ratio"?x.ratio:mode==="viewer"?x.viewers:mode==="peak"?x.peak:x.conv;const val=mode==="play"?compact(x.views):mode==="followers"?fmt(x.followers):mode==="ratio"?(x.ratio*10000).toFixed(1)+" /万播放":mode==="viewer"?compact(x.viewers):mode==="peak"?fmt(x.peak):pct(x.conv);return `<div class="rank-item"><div class="rank-no">${i+1}</div><div class="rank-title"><span class="ellipsis">${x.title}</span><span class="ptag" style="background:${COLORS[x.platform]};margin-top:4px">${x.platform}</span><div class="rank-bar"><i style="width:${Math.max(4,raw/mx*100)}%;background:${COLORS[x.platform]}"></i></div></div><div class="rank-value">${val}</div></div>`}).join("")}
 
 function renderShort(){
   const rows=shortRows(),globalR=currentGlobalRange(),prevR=previousEqualRange(globalR);
@@ -743,7 +2410,8 @@ submitUpload.addEventListener("click",async()=>{
   try{
     if(!dataFiles.files.length)throw new Error("请选择数据文件");
     uploadResult.textContent="正在解析文件...";
-    const {payload,summary}=await parseDataFiles(dataFiles.files);
+    const {pa
+yload,summary}=await parseDataFiles(dataFiles.files);
     uploadResult.textContent="正在写入云端...";
     await uploadPayload(payload,adminPassword.value);
     applyDashboardPayload(payload);
