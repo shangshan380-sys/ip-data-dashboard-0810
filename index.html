@@ -1711,7 +1711,7 @@ async function loadDashboardData(){
     applyDashboardPayload(payload);
     setCloudStatus("云端数据 · "+(META.asOf||"已同步"),"ok");
   }catch(err){
-    const fallback=await fetch("/dashboard-data.json",{cache:"no-store"}).then(r=>r.json());
+    const fallback=await fetch("./dashboard-data.json",{cache:"no-store"}).then(r=>r.json());
     applyDashboardPayload(fallback);
     setCloudStatus("初始数据 · "+(META.asOf||"本地兜底"),"warn");
   }
